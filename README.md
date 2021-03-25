@@ -1,2 +1,3 @@
-# o9d-observability
+# Observability
+
 Opinionated Observability Extensions for .NET
