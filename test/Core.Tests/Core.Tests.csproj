@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <IsPackable>false</IsPackable>
-    <RootNamespace>O9d.Observability.Core.Tests</RootNamespace>
-    <AssemblyName>O9d.Observability.Core.Tests</AssemblyName>
+    <RootNamespace>O9d.Observability.Tests</RootNamespace>
+    <AssemblyName>O9d.Observability.Tests</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1"/>

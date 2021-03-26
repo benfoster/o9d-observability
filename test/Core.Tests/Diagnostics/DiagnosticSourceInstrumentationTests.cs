@@ -8,7 +8,7 @@ using O9d.Observability.Tests.Diagnostics;
 using Shouldly;
 using Xunit;
 
-namespace O9d.Observability.Core.Tests.Diagnostics
+namespace O9d.Observability.Tests.Diagnostics
 {
     public class DiagnosticSourceInstrumentationTests
     {
