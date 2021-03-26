@@ -1,8 +1,7 @@
 using System;
-using O9d.Observability;
+using Microsoft.Extensions.DependencyInjection;
 using O9d.Observability.AspNet;
-
-namespace Microsoft.Extensions.DependencyInjection
+namespace O9d.Observability
 {
     /// <summary>
     /// Extensions for <see cref="IServiceCollection"/>

@@ -1,21 +1,22 @@
 using System;
 using System.Collections.Generic;
+using O9d.Observability.Diagnostics;
 
-namespace O9d.Observability.Diagnostics
+namespace O9d.Observability
 {
     public static class DiagnosticObservabilityBuilderExtensions
     {        
-        public static IObservabilityBuilder AddDiagnosticSourceEventHandler(
+        public static IObservabilityBuilder AddDiagnosticSource(
             this IObservabilityBuilder builder, 
             string source, 
             IObserver<KeyValuePair<string, object?>> handler,
             Func<string, object?, object?, bool>? isEnabledFilter = null
         )
         {
-            return builder.AddDiagnosticSourceEventHandler(source, _ => handler, isEnabledFilter);
+            return builder.AddDiagnosticSource(source, _ => handler, isEnabledFilter);
         }
         
-        public static IObservabilityBuilder AddDiagnosticSourceEventHandler(
+        public static IObservabilityBuilder AddDiagnosticSource(
             this IObservabilityBuilder builder, 
             string source, 
             Func<IServiceProvider, IObserver<KeyValuePair<string, object?>>> handlerFactory,
