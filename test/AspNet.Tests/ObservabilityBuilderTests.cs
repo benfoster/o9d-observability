@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using O9d.Observability.AspNet;
 using Shouldly;
 using Xunit;
-using O9d.Observability.Internal;
 
 namespace O9d.Observability.Core.Tests.Internal
 {
@@ -19,6 +19,7 @@ namespace O9d.Observability.Core.Tests.Internal
                 {
                     builder.AddInstrumentation(_ => new WebInstrumentation());
                 })
+                .Services
                 .BuildServiceProvider();
 
             provider.GetService<IInstrumentation>().ShouldNotBeNull();
@@ -33,6 +34,7 @@ namespace O9d.Observability.Core.Tests.Internal
                     builder.AddInstrumentation(_ => new WebInstrumentation());
                     builder.AddInstrumentation(_ => new DatabaseInstrumentation());
                 })
+                .Services
                 .BuildServiceProvider();
 
             var instrumentations = provider.GetServices<IInstrumentation>();
@@ -50,6 +52,7 @@ namespace O9d.Observability.Core.Tests.Internal
                 {
                     builder.AddInstrumentation(s => new DependencyInstrumentation(s.GetRequiredService<Dependency>()));
                 })
+                .Services
                 .BuildServiceProvider();
 
             provider.GetService<IInstrumentation>().ShouldNotBeNull();

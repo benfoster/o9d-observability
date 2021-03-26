@@ -1,7 +1,8 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
+using O9d.Observability.AspNet.Hosting;
 
-namespace O9d.Observability.Internal
+namespace O9d.Observability.AspNet
 {
     ///<inheritdoc/>
     internal class ObservabilityBuilder : IObservabilityBuilder
@@ -25,7 +26,7 @@ namespace O9d.Observability.Internal
 
         internal void Build()
         {
-            _services.AddSingleton<IObservabilityHost, ObservabilityHost>();
+            _ = _services.AddHostedService<ObservabilityHost>();
         }
     }
 }

@@ -9,7 +9,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MinVer" Version="2.4.0" PrivateAssets="All"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.*"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[3.0,6.0)"/>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[3.0,6.0)"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\shared\icon.png" Pack="true" PackagePath="\"/>

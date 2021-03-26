@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 
-namespace O9d.Observability.Internal
+namespace O9d.Observability.AspNet.Hosting
 {
     /// <summary>
     /// Host for observability components
     /// </summary>
-    internal class ObservabilityHost : IObservabilityHost
+    internal class ObservabilityHost : IHostedService
     {
         private readonly IEnumerable<IInstrumentation> _instrumentations;
 

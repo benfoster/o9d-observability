@@ -1,6 +1,6 @@
-using System;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
+using O9d.Observability.AspNet.Hosting;
 using Shouldly;
 using Xunit;
 
@@ -13,9 +13,10 @@ namespace O9d.Observability.Core.Tests
         {
             var serviceProvider = new ServiceCollection()
                 .AddObservability(builder => {})
+                .Services
                 .BuildServiceProvider();
 
-            serviceProvider.GetService<IObservabilityHost>().ShouldNotBeNull();
+            serviceProvider.GetService<IHostedService>().ShouldBeOfType<ObservabilityHost>();
         }
     }
 }
