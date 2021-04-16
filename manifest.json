@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "/Users/ben.foster/Source/oss/o9d-observability/docs",
+  "source_base_path": "/home/runner/work/o9d-observability/o9d-observability/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -161,7 +161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/O9d.Observability.IObservabilityBuilder.html",
-          "hash": "vLJyALHH/RoxfMqk7mwgjA=="
+          "hash": "Oq0ICUATbeP161Q71M85yA=="
         }
       },
       "is_incremental": false,
@@ -219,23 +219,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 13,
-          "skipped_file_count": 13
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
