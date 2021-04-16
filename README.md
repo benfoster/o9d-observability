@@ -33,7 +33,7 @@ services.AddObservability(builder =>
 
 Internally this will initialize an ASP.NET Core Hosted Service that keeps track of all registered instrumentation components.
 
-To start instrumenting your application you need to add one of the relevant instrumentation packages (discussed in more detail below), for example, to add ASP.NET Core metrics (using Prometheus), add the [09d.AspNet package](O9d.Metrics.AspNet):
+To start instrumenting your application you need to add one of the relevant instrumentation packages (discussed in more detail below), for example, to add ASP.NET Core metrics (using Prometheus), add the [09d.AspNet package](https://www.nuget.org/packages/O9d.Metrics.AspNet):
 
 ```
 dotnet add package O9d.Metrics.AspNet
@@ -55,7 +55,7 @@ One of the design goals of this library is that it should be as unobtrusive as p
 
 ### ASP.NET Core Metrics
 
-The [09d.Metrics.AspNet package](O9d.Metrics.AspNet) adds specific Prometheus metrics that we have found to be the most useful when operationalising HTTP services in production.
+The [09d.Metrics.AspNet package](https://www.nuget.org/packages/O9d.Metrics.AspNet) adds specific Prometheus metrics that we have found to be the most useful when operationalising HTTP services in production.
 
 After installing the Observability Hosting and ASP.NET Metrics Packages to your application, update your `Startup.cs` as follows:
 
