@@ -42,6 +42,8 @@ namespace O9d.Metrics.AspNet
              });
 
         private readonly AspNetMetricsOptions _options;
+        private readonly PropertyFetcher<Exception> _exceptionFetcher = new("exception");
+        private readonly PropertyFetcher<HttpContext> _exceptionContextFetcher = new("httpContext");
 
         public AspNetMetricsObserver(AspNetMetricsOptions options)
         {
@@ -55,12 +57,29 @@ namespace O9d.Metrics.AspNet
                 case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Start":
                     OnHttpRequestStarted(kvp.Value as HttpContext);
                     break;
-                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
-                    OnHttpRequestCompleted(kvp.Value as HttpContext);
-                    break;
                 case "Microsoft.AspNetCore.Routing.EndpointMatched":
                     OnEndpointMatched(kvp.Value as HttpContext);
                     break;
+                // Ref https://github.com/dotnet/aspnetcore/blob/52eff90fbcfca39b7eb58baad597df6a99a542b0/src/Middleware/Diagnostics/test/UnitTests/TestDiagnosticListener.cs
+                case "Microsoft.AspNetCore.Diagnostics.UnhandledException":
+                case "Microsoft.AspNetCore.Diagnostics.HandledException":
+                    OnException(kvp);
+                    break;
+                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
+                    OnHttpRequestCompleted(kvp.Value as HttpContext);
+                    break;
+            }
+        }
+
+        private void OnException(KeyValuePair<string, object?> kvp)
+        {
+            if (kvp.Value is not null 
+                && _exceptionFetcher.TryFetch(kvp.Value, out Exception? ex)
+                && ex is SliException sliEx
+                && _exceptionContextFetcher.TryFetch(kvp.Value, out HttpContext? httpContext)
+            )
+            {
+                httpContext?.SetSliError(sliEx.ErrorType, sliEx.Dependency);
             }
         }
 
