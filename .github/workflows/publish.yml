@@ -40,5 +40,6 @@ jobs:
           NUGET_PRE_API_URL: https://nuget.pkg.github.com/benfoster/index.json
         with:
           target: Publish
+          verbosity: Diagnostic
           arguments: |
             force-docs: true
