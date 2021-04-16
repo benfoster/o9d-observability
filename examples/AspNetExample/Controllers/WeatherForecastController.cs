@@ -34,5 +34,11 @@ namespace AspNetExample.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("error")]
+        public IActionResult GetError()
+        {
+            throw new Exception("On purpose");
+        }
     }
 }

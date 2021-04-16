@@ -1,14 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace O9d.Observability.AspNet.Metrics
 {
     public static class MetricsHttpContextExtensions
     {
         private const string Prefix = "O9d.Observability";
-        private const string RequestTimeStampKey = Prefix + "_RequestTimeStamp";
-        private const string RequestOperationKey = Prefix + "_RequestOperation";
-        
+
+
+        private const string RequestOperationKey = Prefix + "_ReqOp";
         public static void SetOperation(this HttpContext httpContext, string operation)
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
@@ -20,6 +23,56 @@ namespace O9d.Observability.AspNet.Metrics
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
             httpContext.Items.TryGetValue(RequestOperationKey, out object? operation);
             return operation as string;
+        }
+
+        private const string RequestTimeStampKey = Prefix + "_ReqTs";
+        private static readonly double TimestampToTicks = TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency;
+        public static void SetRequestTimestamp(this HttpContext httpContext, long? timestamp = null)
+        {
+            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+            httpContext.Items[RequestTimeStampKey] = timestamp ?? Stopwatch.GetTimestamp();
+        }
+
+        public static TimeSpan GetRequestDuration(this HttpContext httpContext, long? currentTimestamp = null)
+        {
+            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+
+            if (httpContext.Items.TryGetValue(RequestTimeStampKey, out object? value) && value is long requestStart)
+            {
+                long elapsed = (long)(TimestampToTicks * ((currentTimestamp ?? Stopwatch.GetTimestamp()) - requestStart));
+                return new TimeSpan(elapsed);
+            }
+
+            return TimeSpan.Zero;
+        }
+
+        private const string SliErrorTypeKey = Prefix + "_ErrType";
+        private const string SliErrorDependencyKey = Prefix + "_ErrDependency";
+
+        public static bool HasError(this HttpContext httpContext, out (ErrorType, string?)? error)
+        {
+            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+            error = default;
+
+            if (httpContext.Items.TryGetValue(SliErrorTypeKey, out object? value) && value is ErrorType errorType)
+            {
+                httpContext.Items.TryGetValue(SliErrorDependencyKey, out object? dependency);
+                error = (errorType, dependency as string);
+                return true;
+            }
+
+            return false;
+        }
+
+        public static void SetSliError(this HttpContext httpContext, ErrorType errorType, string? errorDependency = null)
+        {
+            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+            httpContext.Items[SliErrorTypeKey] = errorType;
+
+            if (!string.IsNullOrWhiteSpace(errorDependency))
+            {
+                httpContext.Items[SliErrorDependencyKey] = errorDependency;
+            }
         }
     }
 }

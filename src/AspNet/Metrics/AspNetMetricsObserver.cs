@@ -10,13 +10,37 @@ namespace O9d.Observability.AspNet.Metrics
 {
     internal class AspNetMetricsObserver : IObserver<KeyValuePair<string, object?>>
     {
-        private static readonly Gauge HttpRequestsInProgress = Prometheus.Metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", new GaugeConfiguration
-        {
-            SuppressInitialValue = true,
-            LabelNames = new[] { "operation" }
-        });
+        private static readonly Gauge HttpRequestsInProgress = Prometheus.Metrics
+            .CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
+            new GaugeConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation" }
+            });
 
-        private static readonly double TimestampToTicks = TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency;
+        private static readonly Counter HttpErrorsTotal = Prometheus.Metrics
+            .CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
+            new CounterConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency_name" }
+            });
+
+        private static readonly ICollector<IObserver> HttpRequestDuration = Prometheus.Metrics
+            .CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
+             new SummaryConfiguration
+             {
+                 SuppressInitialValue = true,
+                 LabelNames = new[] { "operation", "status_code" },
+                 Objectives = new[]
+                {
+                    new QuantileEpsilonPair(0.5, 0.05),
+                    new QuantileEpsilonPair(0.9, 0.05),
+                    new QuantileEpsilonPair(0.95, 0.01),
+                    new QuantileEpsilonPair(0.99, 0.005),
+                }
+             });
+
         private readonly AspNetMetricsOptions _options;
 
         public AspNetMetricsObserver(AspNetMetricsOptions options)
@@ -48,6 +72,8 @@ namespace O9d.Observability.AspNet.Metrics
             {
                 return;
             }
+
+            httpContext.SetRequestTimestamp();
         }
 
         protected virtual void OnEndpointMatched(HttpContext? httpContext)
@@ -90,6 +116,17 @@ namespace O9d.Observability.AspNet.Metrics
                 // Should we be tracking missed operations?
             }
 
+            HttpRequestDuration
+                .WithLabels(operation, httpContext.Response.StatusCode.ToString())
+                .Observe(httpContext.GetRequestDuration().TotalSeconds);
+
+            if (HasError(httpContext, out (ErrorType Type, string? Dependency)? error))
+            {
+                HttpErrorsTotal
+                    .WithLabels(operation, error!.Value.Type.ToString(), error!.Value.Dependency ?? string.Empty)
+                    .Inc();
+            }
+
             HttpRequestsInProgress
                 .WithLabels(operation)
                 .Dec();
@@ -97,12 +134,10 @@ namespace O9d.Observability.AspNet.Metrics
 
         public void OnCompleted()
         {
-
         }
 
         public void OnError(Exception error)
         {
-
         }
 
         private static string? GetOperation(HttpContext httpContext)
@@ -112,6 +147,29 @@ namespace O9d.Observability.AspNet.Metrics
             return endpoint?.Metadata.GetMetadata<EndpointNameMetadata>()?.EndpointName
                 ?? httpContext.Request.Method + " " + endpoint?.Metadata.GetMetadata<ControllerActionDescriptor>()?
                 .AttributeRouteInfo?.Template;
+        }
+
+        private static bool HasError(HttpContext httpContext, out (ErrorType, string?)? error)
+        {
+            error = default;
+            
+            if (httpContext.HasError(out var httpError))
+            {
+                error = httpError;
+                return true;
+            }
+
+            switch (httpContext.Response.StatusCode)
+            {
+                case int s when s >= 400 && s < 500:
+                    error = (ErrorType.InvalidRequest, default);
+                    break;
+                case int s when s >= 500:
+                    error = (ErrorType.Internal, default);
+                    break;                    
+            }
+
+            return error.HasValue;
         }
     }
 }

@@ -232,3 +232,12 @@ dotnet_naming_symbols.private_fields.applicable_accessibilities = private
 
 dotnet_naming_style.prefix_underscore.capitalization = camel_case
 dotnet_naming_style.prefix_underscore.required_prefix = _
+
+# Private static fields are PascalCase
+dotnet_naming_rule.private_static_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.private_static_fields_should_be_pascal_case.symbols = private_static_fields
+dotnet_naming_rule.private_static_fields_should_be_pascal_case.style = private_static_fields_style
+dotnet_naming_symbols.private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_fields.required_modifiers = static
+dotnet_naming_style.private_static_fields_style.capitalization = pascal_case
