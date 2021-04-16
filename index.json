@@ -1,0 +1,72 @@
+{
+  "api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html": {
+    "href": "api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html",
+    "title": "Class AspNetMetricsObservabilityBuilderExtensions | Observability Documentation",
+    "keywords": "Class AspNetMetricsObservabilityBuilderExtensions Inheritance Object AspNetMetricsObservabilityBuilderExtensions Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public static class AspNetMetricsObservabilityBuilderExtensions : object Methods | Improve this Doc View Source AddAspNetMetrics(IObservabilityBuilder, Nullable<Action<AspNetMetricsOptions>>) Declaration public static IObservabilityBuilder AddAspNetMetrics(this IObservabilityBuilder builder, Action<AspNetMetricsOptions>? configureOptions = null) Parameters Type Name Description IObservabilityBuilder builder Nullable < Action < AspNetMetricsOptions >> configureOptions Returns Type Description IObservabilityBuilder"
+  },
+  "api/O9d.Metrics.AspNet.AspNetMetricsOptions.html": {
+    "href": "api/O9d.Metrics.AspNet.AspNetMetricsOptions.html",
+    "title": "Class AspNetMetricsOptions | Observability Documentation",
+    "keywords": "Class AspNetMetricsOptions Inheritance Object AspNetMetricsOptions Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public class AspNetMetricsOptions : object Constructors | Improve this Doc View Source AspNetMetricsOptions() Declaration public AspNetMetricsOptions() Properties | Improve this Doc View Source ShouldInstrument Gets or sets the criteria for whether the path should be instrumented Declaration public Func<PathString, bool> ShouldInstrument { get; set; } Property Value Type Description Func < PathString , Boolean >"
+  },
+  "api/O9d.Metrics.AspNet.html": {
+    "href": "api/O9d.Metrics.AspNet.html",
+    "title": "Namespace O9d.Metrics.AspNet | Observability Documentation",
+    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions HttpMetrics MetricsHttpContextExtensions"
+  },
+  "api/O9d.Metrics.AspNet.HttpMetrics.html": {
+    "href": "api/O9d.Metrics.AspNet.HttpMetrics.html",
+    "title": "Class HttpMetrics | Observability Documentation",
+    "keywords": "Class HttpMetrics Inheritance Object HttpMetrics Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public class HttpMetrics : object"
+  },
+  "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html": {
+    "href": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",
+    "title": "Class MetricsHttpContextExtensions | Observability Documentation",
+    "keywords": "Class MetricsHttpContextExtensions Inheritance Object MetricsHttpContextExtensions Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public static class MetricsHttpContextExtensions : object Methods | Improve this Doc View Source GetOperation(HttpContext) Declaration public static string? GetOperation(this HttpContext httpContext) Parameters Type Name Description HttpContext httpContext Returns Type Description Nullable < String > | Improve this Doc View Source GetRequestDuration(HttpContext, Nullable<Int64>) Declaration public static TimeSpan GetRequestDuration(this HttpContext httpContext, long? currentTimestamp = null) Parameters Type Name Description HttpContext httpContext Nullable < Int64 > currentTimestamp Returns Type Description TimeSpan | Improve this Doc View Source HasError(HttpContext, out Nullable<(ErrorType, Nullable<String>)>) Declaration public static bool HasError(this HttpContext httpContext, out (ErrorType, string? )? error) Parameters Type Name Description HttpContext httpContext Nullable < ValueTuple < ErrorType , Nullable < String >>> error Returns Type Description Boolean | Improve this Doc View Source SetOperation(HttpContext, String) Declaration public static void SetOperation(this HttpContext httpContext, string operation) Parameters Type Name Description HttpContext httpContext String operation | Improve this Doc View Source SetRequestTimestamp(HttpContext, Nullable<Int64>) Declaration public static void SetRequestTimestamp(this HttpContext httpContext, long? timestamp = null) Parameters Type Name Description HttpContext httpContext Nullable < Int64 > timestamp | Improve this Doc View Source SetSliError(HttpContext, ErrorType, Nullable<String>) Declaration public static void SetSliError(this HttpContext httpContext, ErrorType errorType, string? errorDependency = null) Parameters Type Name Description HttpContext httpContext ErrorType errorType Nullable < String > errorDependency"
+  },
+  "api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html": {
+    "href": "api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html",
+    "title": "Class DiagnosticObservabilityBuilderExtensions | Observability Documentation",
+    "keywords": "Class DiagnosticObservabilityBuilderExtensions Inheritance Object DiagnosticObservabilityBuilderExtensions Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public static class DiagnosticObservabilityBuilderExtensions : object Methods | Improve this Doc View Source AddDiagnosticSource(IObservabilityBuilder, String, Func<IServiceProvider, IObserver<KeyValuePair<String, Nullable<Object>>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>) Declaration public static IObservabilityBuilder AddDiagnosticSource(this IObservabilityBuilder builder, string source, Func<IServiceProvider, IObserver<KeyValuePair<string, object?>>> handlerFactory, Func<string, object?, object?, bool>? isEnabledFilter = null) Parameters Type Name Description IObservabilityBuilder builder String source Func < IServiceProvider , IObserver < KeyValuePair < String , Nullable < Object >>>> handlerFactory Nullable < Func < String , Nullable < Object >, Nullable < Object >, Boolean >> isEnabledFilter Returns Type Description IObservabilityBuilder | Improve this Doc View Source AddDiagnosticSource(IObservabilityBuilder, String, IObserver<KeyValuePair<String, Nullable<Object>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>) Declaration public static IObservabilityBuilder AddDiagnosticSource(this IObservabilityBuilder builder, string source, IObserver<KeyValuePair<string, object?>> handler, Func<string, object?, object?, bool>? isEnabledFilter = null) Parameters Type Name Description IObservabilityBuilder builder String source IObserver < KeyValuePair < String , Nullable < Object >>> handler Nullable < Func < String , Nullable < Object >, Nullable < Object >, Boolean >> isEnabledFilter Returns Type Description IObservabilityBuilder"
+  },
+  "api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html": {
+    "href": "api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html",
+    "title": "Class DiagnosticSourceInstrumentation | Observability Documentation",
+    "keywords": "Class DiagnosticSourceInstrumentation Inheritance Object DiagnosticSourceInstrumentation Implements IInstrumentation IObserver < DiagnosticListener > IDisposable Namespace : O9d.Observability.Diagnostics Assembly : O9d.Observability.dll Syntax public class DiagnosticSourceInstrumentation : object, IInstrumentation, IObserver<DiagnosticListener>, IDisposable Constructors | Improve this Doc View Source DiagnosticSourceInstrumentation(Func<String, IObserver<KeyValuePair<String, Nullable<Object>>>>, Func<DiagnosticListener, Boolean>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>) Declaration public DiagnosticSourceInstrumentation(Func<string, IObserver<KeyValuePair<string, object?>>> handlerFactory, Func<DiagnosticListener, bool> diagnosticSourceFilter, Func<string, object?, object?, bool>? isEnabledFilter) Parameters Type Name Description Func < String , IObserver < KeyValuePair < String , Nullable < Object >>>> handlerFactory Func < DiagnosticListener , Boolean > diagnosticSourceFilter Nullable < Func < String , Nullable < Object >, Nullable < Object >, Boolean >> isEnabledFilter Methods | Improve this Doc View Source Dispose() Declaration public void Dispose() | Improve this Doc View Source Dispose(Boolean) Declaration protected virtual void Dispose(bool disposing) Parameters Type Name Description Boolean disposing | Improve this Doc View Source OnCompleted() Declaration public void OnCompleted() | Improve this Doc View Source OnError(Exception) Declaration public void OnError(Exception error) Parameters Type Name Description Exception error | Improve this Doc View Source OnNext(DiagnosticListener) Declaration public void OnNext(DiagnosticListener value) Parameters Type Name Description DiagnosticListener value | Improve this Doc View Source StartAsync(CancellationToken) Declaration public Task StartAsync(CancellationToken cancellationToken) Parameters Type Name Description CancellationToken cancellationToken Returns Type Description Task Implements IInstrumentation IObserver<> IDisposable"
+  },
+  "api/O9d.Observability.Diagnostics.html": {
+    "href": "api/O9d.Observability.Diagnostics.html",
+    "title": "Namespace O9d.Observability.Diagnostics | Observability Documentation",
+    "keywords": "Namespace O9d.Observability.Diagnostics Classes DiagnosticSourceInstrumentation"
+  },
+  "api/O9d.Observability.ErrorType.html": {
+    "href": "api/O9d.Observability.ErrorType.html",
+    "title": "Enum ErrorType | Observability Documentation",
+    "keywords": "Enum ErrorType Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public enum ErrorType : int Fields Name Description ExternalDependency Internal InternalDependency InvalidRequest"
+  },
+  "api/O9d.Observability.html": {
+    "href": "api/O9d.Observability.html",
+    "title": "Namespace O9d.Observability | Observability Documentation",
+    "keywords": "Namespace O9d.Observability Classes DiagnosticObservabilityBuilderExtensions ObservabilityServiceCollectionExtensions Extensions for Interfaces IInstrumentation Defines an instrumentation component that can be initialised by the Observability Host. IObservabilityBuilder Extensibility point for adding observability components. Enums ErrorType"
+  },
+  "api/O9d.Observability.IInstrumentation.html": {
+    "href": "api/O9d.Observability.IInstrumentation.html",
+    "title": "Interface IInstrumentation | Observability Documentation",
+    "keywords": "Interface IInstrumentation Defines an instrumentation component that can be initialised by the Observability Host. Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public interface IInstrumentation Methods | Improve this Doc View Source StartAsync(CancellationToken) Start instrumenting. Declaration Task StartAsync(CancellationToken cancellationToken) Parameters Type Name Description CancellationToken cancellationToken Returns Type Description Task"
+  },
+  "api/O9d.Observability.IObservabilityBuilder.html": {
+    "href": "api/O9d.Observability.IObservabilityBuilder.html",
+    "title": "Interface IObservabilityBuilder | Observability Documentation",
+    "keywords": "Interface IObservabilityBuilder Extensibility point for adding observability components. Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public interface IObservabilityBuilder Properties | Improve this Doc View Source Services Gets the where services are configured. /// Declaration IServiceCollection Services { get; } Property Value Type Description IServiceCollection Methods | Improve this Doc View Source AddInstrumentation(Func<IServiceProvider, IInstrumentation>) Add an instrumentation component to the builder. Declaration IObservabilityBuilder AddInstrumentation(Func<IServiceProvider, IInstrumentation> instrumentationFactory) Parameters Type Name Description Func < IServiceProvider , IInstrumentation > instrumentationFactory A factory used to construct the instrumentation component. Returns Type Description IObservabilityBuilder Extension Methods DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, IObserver<KeyValuePair<String, Nullable<Object>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>) DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, Func<IServiceProvider, IObserver<KeyValuePair<String, Nullable<Object>>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>) AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(IObservabilityBuilder, Nullable<Action<AspNetMetricsOptions>>)"
+  },
+  "api/O9d.Observability.ObservabilityServiceCollectionExtensions.html": {
+    "href": "api/O9d.Observability.ObservabilityServiceCollectionExtensions.html",
+    "title": "Class ObservabilityServiceCollectionExtensions | Observability Documentation",
+    "keywords": "Class ObservabilityServiceCollectionExtensions Extensions for Inheritance Object ObservabilityServiceCollectionExtensions Namespace : O9d.Observability Assembly : O9d.Observability.Hosting.AspNet.dll Syntax public static class ObservabilityServiceCollectionExtensions : object Methods | Improve this Doc View Source AddObservability(IServiceCollection, Nullable<Action<IObservabilityBuilder>>) Registers observability components with the application service provider Declaration public static IObservabilityBuilder AddObservability(this IServiceCollection services, Action<IObservabilityBuilder>? configure = null) Parameters Type Name Description IServiceCollection services The service collection Nullable < Action < IObservabilityBuilder >> configure Configuration expression for the observability builder Returns Type Description IObservabilityBuilder The service collection"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Observability | Observability Documentation",
+    "keywords": "Observability Getting Started TODO"
+  }
+}

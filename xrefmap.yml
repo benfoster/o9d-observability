@@ -1,0 +1,407 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: O9d.Metrics.AspNet
+  name: O9d.Metrics.AspNet
+  href: api/O9d.Metrics.AspNet.html
+  commentId: N:O9d.Metrics.AspNet
+  fullName: O9d.Metrics.AspNet
+  nameWithType: O9d.Metrics.AspNet
+- uid: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions
+  name: AspNetMetricsObservabilityBuilderExtensions
+  href: api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html
+  commentId: T:O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions
+  fullName: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions
+  nameWithType: AspNetMetricsObservabilityBuilderExtensions
+- uid: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(O9d.Observability.IObservabilityBuilder,System.Nullable{Action{O9d.Metrics.AspNet.AspNetMetricsOptions}})
+  name: AddAspNetMetrics(IObservabilityBuilder, Nullable<Action<AspNetMetricsOptions>>)
+  href: api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html#O9d_Metrics_AspNet_AspNetMetricsObservabilityBuilderExtensions_AddAspNetMetrics_O9d_Observability_IObservabilityBuilder_System_Nullable_Action_O9d_Metrics_AspNet_AspNetMetricsOptions___
+  commentId: M:O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(O9d.Observability.IObservabilityBuilder,System.Nullable{Action{O9d.Metrics.AspNet.AspNetMetricsOptions}})
+  name.vb: AddAspNetMetrics(IObservabilityBuilder, Nullable(Of Action(Of AspNetMetricsOptions)))
+  fullName: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(O9d.Observability.IObservabilityBuilder, System.Nullable<Action<O9d.Metrics.AspNet.AspNetMetricsOptions>>)
+  fullName.vb: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(O9d.Observability.IObservabilityBuilder, System.Nullable(Of Action(Of O9d.Metrics.AspNet.AspNetMetricsOptions)))
+  nameWithType: AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(IObservabilityBuilder, Nullable<Action<AspNetMetricsOptions>>)
+  nameWithType.vb: AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics(IObservabilityBuilder, Nullable(Of Action(Of AspNetMetricsOptions)))
+- uid: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics*
+  name: AddAspNetMetrics
+  href: api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html#O9d_Metrics_AspNet_AspNetMetricsObservabilityBuilderExtensions_AddAspNetMetrics_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics
+  nameWithType: AspNetMetricsObservabilityBuilderExtensions.AddAspNetMetrics
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions
+  name: AspNetMetricsOptions
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html
+  commentId: T:O9d.Metrics.AspNet.AspNetMetricsOptions
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions
+  nameWithType: AspNetMetricsOptions
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor
+  name: AspNetMetricsOptions()
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions__ctor
+  commentId: M:O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.AspNetMetricsOptions()
+  nameWithType: AspNetMetricsOptions.AspNetMetricsOptions()
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor*
+  name: AspNetMetricsOptions
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions__ctor_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.AspNetMetricsOptions
+  nameWithType: AspNetMetricsOptions.AspNetMetricsOptions
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
+  name: ShouldInstrument
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
+  nameWithType: AspNetMetricsOptions.ShouldInstrument
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument*
+  name: ShouldInstrument
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
+  nameWithType: AspNetMetricsOptions.ShouldInstrument
+- uid: O9d.Metrics.AspNet.HttpMetrics
+  name: HttpMetrics
+  href: api/O9d.Metrics.AspNet.HttpMetrics.html
+  commentId: T:O9d.Metrics.AspNet.HttpMetrics
+  fullName: O9d.Metrics.AspNet.HttpMetrics
+  nameWithType: HttpMetrics
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions
+  name: MetricsHttpContextExtensions
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html
+  commentId: T:O9d.Metrics.AspNet.MetricsHttpContextExtensions
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions
+  nameWithType: MetricsHttpContextExtensions
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
+  name: GetOperation(HttpContext)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetOperation_HttpContext_
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
+  nameWithType: MetricsHttpContextExtensions.GetOperation(HttpContext)
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation*
+  name: GetOperation
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetOperation_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation
+  nameWithType: MetricsHttpContextExtensions.GetOperation
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext,System.Nullable{System.Int64})
+  name: GetRequestDuration(HttpContext, Nullable<Int64>)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_HttpContext_System_Nullable_System_Int64__
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext,System.Nullable{System.Int64})
+  name.vb: GetRequestDuration(HttpContext, Nullable(Of Int64))
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext, System.Nullable<System.Int64>)
+  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext, System.Nullable(Of System.Int64))
+  nameWithType: MetricsHttpContextExtensions.GetRequestDuration(HttpContext, Nullable<Int64>)
+  nameWithType.vb: MetricsHttpContextExtensions.GetRequestDuration(HttpContext, Nullable(Of Int64))
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration*
+  name: GetRequestDuration
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration
+  nameWithType: MetricsHttpContextExtensions.GetRequestDuration
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext,System.Nullable{System.ValueTuple{O9d.Observability.ErrorType,System.Nullable{System.String}}}@)
+  name: HasError(HttpContext, out Nullable<(ErrorType, Nullable<String>)>)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_HasError_HttpContext_System_Nullable_System_ValueTuple_O9d_Observability_ErrorType_System_Nullable_System_String_____
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext,System.Nullable{System.ValueTuple{O9d.Observability.ErrorType,System.Nullable{System.String}}}@)
+  name.vb: HasError(HttpContext, ByRef Nullable(Of (ErrorType, Nullable(Of String))))
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext, out System.Nullable<System.ValueTuple<O9d.Observability.ErrorType, System.Nullable<System.String>>>)
+  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext, ByRef System.Nullable(Of System.ValueTuple(Of O9d.Observability.ErrorType, System.Nullable(Of System.String))))
+  nameWithType: MetricsHttpContextExtensions.HasError(HttpContext, out Nullable<(ErrorType, Nullable<String>)>)
+  nameWithType.vb: MetricsHttpContextExtensions.HasError(HttpContext, ByRef Nullable(Of (ErrorType, Nullable(Of String))))
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError*
+  name: HasError
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_HasError_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError
+  nameWithType: MetricsHttpContextExtensions.HasError
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext,System.String)
+  name: SetOperation(HttpContext, String)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetOperation_HttpContext_System_String_
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext,System.String)
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext, System.String)
+  nameWithType: MetricsHttpContextExtensions.SetOperation(HttpContext, String)
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation*
+  name: SetOperation
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetOperation_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation
+  nameWithType: MetricsHttpContextExtensions.SetOperation
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext,System.Nullable{System.Int64})
+  name: SetRequestTimestamp(HttpContext, Nullable<Int64>)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetRequestTimestamp_HttpContext_System_Nullable_System_Int64__
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext,System.Nullable{System.Int64})
+  name.vb: SetRequestTimestamp(HttpContext, Nullable(Of Int64))
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, System.Nullable<System.Int64>)
+  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, System.Nullable(Of System.Int64))
+  nameWithType: MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, Nullable<Int64>)
+  nameWithType.vb: MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, Nullable(Of Int64))
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp*
+  name: SetRequestTimestamp
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetRequestTimestamp_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp
+  nameWithType: MetricsHttpContextExtensions.SetRequestTimestamp
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext,O9d.Observability.ErrorType,System.Nullable{System.String})
+  name: SetSliError(HttpContext, ErrorType, Nullable<String>)
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_HttpContext_O9d_Observability_ErrorType_System_Nullable_System_String__
+  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext,O9d.Observability.ErrorType,System.Nullable{System.String})
+  name.vb: SetSliError(HttpContext, ErrorType, Nullable(Of String))
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext, O9d.Observability.ErrorType, System.Nullable<System.String>)
+  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext, O9d.Observability.ErrorType, System.Nullable(Of System.String))
+  nameWithType: MetricsHttpContextExtensions.SetSliError(HttpContext, ErrorType, Nullable<String>)
+  nameWithType.vb: MetricsHttpContextExtensions.SetSliError(HttpContext, ErrorType, Nullable(Of String))
+- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError*
+  name: SetSliError
+  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_
+  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError
+  nameWithType: MetricsHttpContextExtensions.SetSliError
+- uid: O9d.Observability
+  name: O9d.Observability
+  href: api/O9d.Observability.html
+  commentId: N:O9d.Observability
+  fullName: O9d.Observability
+  nameWithType: O9d.Observability
+- uid: O9d.Observability.DiagnosticObservabilityBuilderExtensions
+  name: DiagnosticObservabilityBuilderExtensions
+  href: api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html
+  commentId: T:O9d.Observability.DiagnosticObservabilityBuilderExtensions
+  fullName: O9d.Observability.DiagnosticObservabilityBuilderExtensions
+  nameWithType: DiagnosticObservabilityBuilderExtensions
+- uid: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder,System.String,Func{IServiceProvider,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}}},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name: AddDiagnosticSource(IObservabilityBuilder, String, Func<IServiceProvider, IObserver<KeyValuePair<String, Nullable<Object>>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  href: api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html#O9d_Observability_DiagnosticObservabilityBuilderExtensions_AddDiagnosticSource_O9d_Observability_IObservabilityBuilder_System_String_Func_IServiceProvider_IObserver_KeyValuePair_System_String_System_Nullable_System_Object_____System_Nullable_Func_System_String_System_Nullable_System_Object__System_Nullable_System_Object__System_Boolean___
+  commentId: M:O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder,System.String,Func{IServiceProvider,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}}},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name.vb: AddDiagnosticSource(IObservabilityBuilder, String, Func(Of IServiceProvider, IObserver(Of KeyValuePair(Of String, Nullable(Of Object)))), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+  fullName: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder, System.String, Func<IServiceProvider, IObserver<KeyValuePair<System.String, System.Nullable<System.Object>>>>, System.Nullable<Func<System.String, System.Nullable<System.Object>, System.Nullable<System.Object>, System.Boolean>>)
+  fullName.vb: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder, System.String, Func(Of IServiceProvider, IObserver(Of KeyValuePair(Of System.String, System.Nullable(Of System.Object)))), System.Nullable(Of Func(Of System.String, System.Nullable(Of System.Object), System.Nullable(Of System.Object), System.Boolean)))
+  nameWithType: DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, Func<IServiceProvider, IObserver<KeyValuePair<String, Nullable<Object>>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  nameWithType.vb: DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, Func(Of IServiceProvider, IObserver(Of KeyValuePair(Of String, Nullable(Of Object)))), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+- uid: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder,System.String,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name: AddDiagnosticSource(IObservabilityBuilder, String, IObserver<KeyValuePair<String, Nullable<Object>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  href: api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html#O9d_Observability_DiagnosticObservabilityBuilderExtensions_AddDiagnosticSource_O9d_Observability_IObservabilityBuilder_System_String_IObserver_KeyValuePair_System_String_System_Nullable_System_Object____System_Nullable_Func_System_String_System_Nullable_System_Object__System_Nullable_System_Object__System_Boolean___
+  commentId: M:O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder,System.String,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name.vb: AddDiagnosticSource(IObservabilityBuilder, String, IObserver(Of KeyValuePair(Of String, Nullable(Of Object))), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+  fullName: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder, System.String, IObserver<KeyValuePair<System.String, System.Nullable<System.Object>>>, System.Nullable<Func<System.String, System.Nullable<System.Object>, System.Nullable<System.Object>, System.Boolean>>)
+  fullName.vb: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(O9d.Observability.IObservabilityBuilder, System.String, IObserver(Of KeyValuePair(Of System.String, System.Nullable(Of System.Object))), System.Nullable(Of Func(Of System.String, System.Nullable(Of System.Object), System.Nullable(Of System.Object), System.Boolean)))
+  nameWithType: DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, IObserver<KeyValuePair<String, Nullable<Object>>>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  nameWithType.vb: DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource(IObservabilityBuilder, String, IObserver(Of KeyValuePair(Of String, Nullable(Of Object))), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+- uid: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource*
+  name: AddDiagnosticSource
+  href: api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html#O9d_Observability_DiagnosticObservabilityBuilderExtensions_AddDiagnosticSource_
+  commentId: Overload:O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource
+  isSpec: "True"
+  fullName: O9d.Observability.DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource
+  nameWithType: DiagnosticObservabilityBuilderExtensions.AddDiagnosticSource
+- uid: O9d.Observability.Diagnostics
+  name: O9d.Observability.Diagnostics
+  href: api/O9d.Observability.Diagnostics.html
+  commentId: N:O9d.Observability.Diagnostics
+  fullName: O9d.Observability.Diagnostics
+  nameWithType: O9d.Observability.Diagnostics
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation
+  name: DiagnosticSourceInstrumentation
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html
+  commentId: T:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation
+  nameWithType: DiagnosticSourceInstrumentation
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.#ctor(Func{System.String,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}}},Func{DiagnosticListener,System.Boolean},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name: DiagnosticSourceInstrumentation(Func<String, IObserver<KeyValuePair<String, Nullable<Object>>>>, Func<DiagnosticListener, Boolean>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation__ctor_Func_System_String_IObserver_KeyValuePair_System_String_System_Nullable_System_Object_____Func_DiagnosticListener_System_Boolean__System_Nullable_Func_System_String_System_Nullable_System_Object__System_Nullable_System_Object__System_Boolean___
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.#ctor(Func{System.String,IObserver{KeyValuePair{System.String,System.Nullable{System.Object}}}},Func{DiagnosticListener,System.Boolean},System.Nullable{Func{System.String,System.Nullable{System.Object},System.Nullable{System.Object},System.Boolean}})
+  name.vb: DiagnosticSourceInstrumentation(Func(Of String, IObserver(Of KeyValuePair(Of String, Nullable(Of Object)))), Func(Of DiagnosticListener, Boolean), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation(Func<System.String, IObserver<KeyValuePair<System.String, System.Nullable<System.Object>>>>, Func<DiagnosticListener, System.Boolean>, System.Nullable<Func<System.String, System.Nullable<System.Object>, System.Nullable<System.Object>, System.Boolean>>)
+  fullName.vb: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation(Func(Of System.String, IObserver(Of KeyValuePair(Of System.String, System.Nullable(Of System.Object)))), Func(Of DiagnosticListener, System.Boolean), System.Nullable(Of Func(Of System.String, System.Nullable(Of System.Object), System.Nullable(Of System.Object), System.Boolean)))
+  nameWithType: DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation(Func<String, IObserver<KeyValuePair<String, Nullable<Object>>>>, Func<DiagnosticListener, Boolean>, Nullable<Func<String, Nullable<Object>, Nullable<Object>, Boolean>>)
+  nameWithType.vb: DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation(Func(Of String, IObserver(Of KeyValuePair(Of String, Nullable(Of Object)))), Func(Of DiagnosticListener, Boolean), Nullable(Of Func(Of String, Nullable(Of Object), Nullable(Of Object), Boolean)))
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.#ctor*
+  name: DiagnosticSourceInstrumentation
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation__ctor_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.#ctor
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation
+  nameWithType: DiagnosticSourceInstrumentation.DiagnosticSourceInstrumentation
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose
+  name: Dispose()
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_Dispose
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose()
+  nameWithType: DiagnosticSourceInstrumentation.Dispose()
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_Dispose_System_Boolean_
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose(System.Boolean)
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose(System.Boolean)
+  nameWithType: DiagnosticSourceInstrumentation.Dispose(Boolean)
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose*
+  name: Dispose
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_Dispose_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.Dispose
+  nameWithType: DiagnosticSourceInstrumentation.Dispose
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted
+  name: OnCompleted()
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnCompleted
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted()
+  nameWithType: DiagnosticSourceInstrumentation.OnCompleted()
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted*
+  name: OnCompleted
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnCompleted_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnCompleted
+  nameWithType: DiagnosticSourceInstrumentation.OnCompleted
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError(Exception)
+  name: OnError(Exception)
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnError_Exception_
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError(Exception)
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError(Exception)
+  nameWithType: DiagnosticSourceInstrumentation.OnError(Exception)
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError*
+  name: OnError
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnError_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnError
+  nameWithType: DiagnosticSourceInstrumentation.OnError
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext(DiagnosticListener)
+  name: OnNext(DiagnosticListener)
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnNext_DiagnosticListener_
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext(DiagnosticListener)
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext(DiagnosticListener)
+  nameWithType: DiagnosticSourceInstrumentation.OnNext(DiagnosticListener)
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext*
+  name: OnNext
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_OnNext_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.OnNext
+  nameWithType: DiagnosticSourceInstrumentation.OnNext
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync(CancellationToken)
+  name: StartAsync(CancellationToken)
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_StartAsync_CancellationToken_
+  commentId: M:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync(CancellationToken)
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync(CancellationToken)
+  nameWithType: DiagnosticSourceInstrumentation.StartAsync(CancellationToken)
+- uid: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync*
+  name: StartAsync
+  href: api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html#O9d_Observability_Diagnostics_DiagnosticSourceInstrumentation_StartAsync_
+  commentId: Overload:O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync
+  isSpec: "True"
+  fullName: O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.StartAsync
+  nameWithType: DiagnosticSourceInstrumentation.StartAsync
+- uid: O9d.Observability.ErrorType
+  name: ErrorType
+  href: api/O9d.Observability.ErrorType.html
+  commentId: T:O9d.Observability.ErrorType
+  fullName: O9d.Observability.ErrorType
+  nameWithType: ErrorType
+- uid: O9d.Observability.ErrorType.ExternalDependency
+  name: ExternalDependency
+  href: api/O9d.Observability.ErrorType.html#O9d_Observability_ErrorType_ExternalDependency
+  commentId: F:O9d.Observability.ErrorType.ExternalDependency
+  fullName: O9d.Observability.ErrorType.ExternalDependency
+  nameWithType: ErrorType.ExternalDependency
+- uid: O9d.Observability.ErrorType.Internal
+  name: Internal
+  href: api/O9d.Observability.ErrorType.html#O9d_Observability_ErrorType_Internal
+  commentId: F:O9d.Observability.ErrorType.Internal
+  fullName: O9d.Observability.ErrorType.Internal
+  nameWithType: ErrorType.Internal
+- uid: O9d.Observability.ErrorType.InternalDependency
+  name: InternalDependency
+  href: api/O9d.Observability.ErrorType.html#O9d_Observability_ErrorType_InternalDependency
+  commentId: F:O9d.Observability.ErrorType.InternalDependency
+  fullName: O9d.Observability.ErrorType.InternalDependency
+  nameWithType: ErrorType.InternalDependency
+- uid: O9d.Observability.ErrorType.InvalidRequest
+  name: InvalidRequest
+  href: api/O9d.Observability.ErrorType.html#O9d_Observability_ErrorType_InvalidRequest
+  commentId: F:O9d.Observability.ErrorType.InvalidRequest
+  fullName: O9d.Observability.ErrorType.InvalidRequest
+  nameWithType: ErrorType.InvalidRequest
+- uid: O9d.Observability.IInstrumentation
+  name: IInstrumentation
+  href: api/O9d.Observability.IInstrumentation.html
+  commentId: T:O9d.Observability.IInstrumentation
+  fullName: O9d.Observability.IInstrumentation
+  nameWithType: IInstrumentation
+- uid: O9d.Observability.IInstrumentation.StartAsync(CancellationToken)
+  name: StartAsync(CancellationToken)
+  href: api/O9d.Observability.IInstrumentation.html#O9d_Observability_IInstrumentation_StartAsync_CancellationToken_
+  commentId: M:O9d.Observability.IInstrumentation.StartAsync(CancellationToken)
+  fullName: O9d.Observability.IInstrumentation.StartAsync(CancellationToken)
+  nameWithType: IInstrumentation.StartAsync(CancellationToken)
+- uid: O9d.Observability.IInstrumentation.StartAsync*
+  name: StartAsync
+  href: api/O9d.Observability.IInstrumentation.html#O9d_Observability_IInstrumentation_StartAsync_
+  commentId: Overload:O9d.Observability.IInstrumentation.StartAsync
+  isSpec: "True"
+  fullName: O9d.Observability.IInstrumentation.StartAsync
+  nameWithType: IInstrumentation.StartAsync
+- uid: O9d.Observability.IObservabilityBuilder
+  name: IObservabilityBuilder
+  href: api/O9d.Observability.IObservabilityBuilder.html
+  commentId: T:O9d.Observability.IObservabilityBuilder
+  fullName: O9d.Observability.IObservabilityBuilder
+  nameWithType: IObservabilityBuilder
+- uid: O9d.Observability.IObservabilityBuilder.AddInstrumentation(Func{IServiceProvider,O9d.Observability.IInstrumentation})
+  name: AddInstrumentation(Func<IServiceProvider, IInstrumentation>)
+  href: api/O9d.Observability.IObservabilityBuilder.html#O9d_Observability_IObservabilityBuilder_AddInstrumentation_Func_IServiceProvider_O9d_Observability_IInstrumentation__
+  commentId: M:O9d.Observability.IObservabilityBuilder.AddInstrumentation(Func{IServiceProvider,O9d.Observability.IInstrumentation})
+  name.vb: AddInstrumentation(Func(Of IServiceProvider, IInstrumentation))
+  fullName: O9d.Observability.IObservabilityBuilder.AddInstrumentation(Func<IServiceProvider, O9d.Observability.IInstrumentation>)
+  fullName.vb: O9d.Observability.IObservabilityBuilder.AddInstrumentation(Func(Of IServiceProvider, O9d.Observability.IInstrumentation))
+  nameWithType: IObservabilityBuilder.AddInstrumentation(Func<IServiceProvider, IInstrumentation>)
+  nameWithType.vb: IObservabilityBuilder.AddInstrumentation(Func(Of IServiceProvider, IInstrumentation))
+- uid: O9d.Observability.IObservabilityBuilder.AddInstrumentation*
+  name: AddInstrumentation
+  href: api/O9d.Observability.IObservabilityBuilder.html#O9d_Observability_IObservabilityBuilder_AddInstrumentation_
+  commentId: Overload:O9d.Observability.IObservabilityBuilder.AddInstrumentation
+  isSpec: "True"
+  fullName: O9d.Observability.IObservabilityBuilder.AddInstrumentation
+  nameWithType: IObservabilityBuilder.AddInstrumentation
+- uid: O9d.Observability.IObservabilityBuilder.Services
+  name: Services
+  href: api/O9d.Observability.IObservabilityBuilder.html#O9d_Observability_IObservabilityBuilder_Services
+  commentId: P:O9d.Observability.IObservabilityBuilder.Services
+  fullName: O9d.Observability.IObservabilityBuilder.Services
+  nameWithType: IObservabilityBuilder.Services
+- uid: O9d.Observability.IObservabilityBuilder.Services*
+  name: Services
+  href: api/O9d.Observability.IObservabilityBuilder.html#O9d_Observability_IObservabilityBuilder_Services_
+  commentId: Overload:O9d.Observability.IObservabilityBuilder.Services
+  isSpec: "True"
+  fullName: O9d.Observability.IObservabilityBuilder.Services
+  nameWithType: IObservabilityBuilder.Services
+- uid: O9d.Observability.ObservabilityServiceCollectionExtensions
+  name: ObservabilityServiceCollectionExtensions
+  href: api/O9d.Observability.ObservabilityServiceCollectionExtensions.html
+  commentId: T:O9d.Observability.ObservabilityServiceCollectionExtensions
+  fullName: O9d.Observability.ObservabilityServiceCollectionExtensions
+  nameWithType: ObservabilityServiceCollectionExtensions
+- uid: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection,System.Nullable{Action{O9d.Observability.IObservabilityBuilder}})
+  name: AddObservability(IServiceCollection, Nullable<Action<IObservabilityBuilder>>)
+  href: api/O9d.Observability.ObservabilityServiceCollectionExtensions.html#O9d_Observability_ObservabilityServiceCollectionExtensions_AddObservability_IServiceCollection_System_Nullable_Action_O9d_Observability_IObservabilityBuilder___
+  commentId: M:O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection,System.Nullable{Action{O9d.Observability.IObservabilityBuilder}})
+  name.vb: AddObservability(IServiceCollection, Nullable(Of Action(Of IObservabilityBuilder)))
+  fullName: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection, System.Nullable<Action<O9d.Observability.IObservabilityBuilder>>)
+  fullName.vb: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection, System.Nullable(Of Action(Of O9d.Observability.IObservabilityBuilder)))
+  nameWithType: ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection, Nullable<Action<IObservabilityBuilder>>)
+  nameWithType.vb: ObservabilityServiceCollectionExtensions.AddObservability(IServiceCollection, Nullable(Of Action(Of IObservabilityBuilder)))
+- uid: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability*
+  name: AddObservability
+  href: api/O9d.Observability.ObservabilityServiceCollectionExtensions.html#O9d_Observability_ObservabilityServiceCollectionExtensions_AddObservability_
+  commentId: Overload:O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability
+  isSpec: "True"
+  fullName: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability
+  nameWithType: ObservabilityServiceCollectionExtensions.AddObservability

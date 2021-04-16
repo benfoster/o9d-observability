@@ -1,0 +1,273 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/ben.foster/Source/oss/o9d-observability/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "img/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "img/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "jw2TlJ/xRyWgRJ6oIUIXsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.AspNetMetricsObservabilityBuilderExtensions.html",
+          "hash": "Tn0g+i0mLeKvejGlN/gdwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.AspNetMetricsOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.AspNetMetricsOptions.html",
+          "hash": "dCTh7WWRM7yDxN0cBAcw9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.HttpMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.HttpMetrics.html",
+          "hash": "FevBDGpkjtBu0C+qr9w+bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",
+          "hash": "fm+JWK6euY/ny6hGAB1tBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.html",
+          "hash": "rrhQCnJ3R4Rd1uISszNyfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.DiagnosticObservabilityBuilderExtensions.html",
+          "hash": "hw4Y/YHRfHC577KexT5WwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.Diagnostics.DiagnosticSourceInstrumentation.html",
+          "hash": "cXsJpqW/F5fKHg1DwKykMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.Diagnostics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.Diagnostics.html",
+          "hash": "MDhRxibBwFW29WTepQ2RKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.ErrorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.ErrorType.html",
+          "hash": "dbB6M05SP5xNrf0hW3AjqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.IInstrumentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.IInstrumentation.html",
+          "hash": "owkC9vit9NbetHZ/bTwsvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.IObservabilityBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.IObservabilityBuilder.html",
+          "hash": "vLJyALHH/RoxfMqk7mwgjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.ObservabilityServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.ObservabilityServiceCollectionExtensions.html",
+          "hash": "2+lwsE23ZlHvouMwI+Apfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.html",
+          "hash": "UKLCqGoqkp56G9CTaFqbww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "5cPHSN7/5vHUPRavtC1Lkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "DIVAmFocr8iRqtr/mgklow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 13,
+          "skipped_file_count": 13
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
