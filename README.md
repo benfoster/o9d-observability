@@ -1,3 +1,5 @@
+<img alt="Observability Icon" src="src/shared/icon.png" width="64px" />
+
 # Observability
 
 [![NuGet](https://img.shields.io/nuget/v/O9d.Observability.svg)](https://www.nuget.org/packages/O9d.Observability) 
