@@ -121,9 +121,9 @@ namespace O9d.Metrics.AspNet
                 .Observe(httpContext.GetRequestDuration().TotalSeconds);
 
             if (HasError(httpContext, out (ErrorType Type, string? Dependency)? error))
-            {
+            {                
                 HttpErrorsTotal
-                    .WithLabels(operation, error!.Value.Type.ToString(), error!.Value.Dependency ?? string.Empty)
+                    .WithLabels(operation, error!.Value.Type.GetStringValue(), error!.Value.Dependency ?? string.Empty)
                     .Inc();
             }
 
