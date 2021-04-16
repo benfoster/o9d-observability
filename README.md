@@ -10,7 +10,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/benfoster/o9d-observability/badge.svg?branch=main)](https://coveralls.io/github/benfoster/o9d-observability?branch=main)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=benfoster_o9d-observability&metric=alert_status)](https://sonarcloud.io/dashboard?id=benfoster_o9d-observability)
 
-Opinionated Observability Extensions for .NET.
+O[pinionate]d Observability Extensions for .NET.
 
 ## Quick Start
 
@@ -99,20 +99,20 @@ Labels:
 |---|---|---|
 | `operation`  | A descriptor for the operation and endpoint that was requested  | `get_customers`  |
 | `sli_error_type` | The service level indicator error type | `external_dependency` |
-| `sli_dependency` | For dependency error types, the name of the causing dependency | `twilio` |
+| `sli_dependency` | For dependency error types, the name of the causing dependency | `skynet` |
 
 #### Calculating Service Availability
 
-With these metrics we can easily calculate both internal and external service availability. To calculate our client facing availability, `A`:
+With these metrics we can easily calculate both internal and external service availability. To calculate our client facing availability:
 
 ```
-A = successful_requests / (total_requests - client_failures)
+Availability = successful_requests / (total_requests - client_failures)
 ```
 
 For example:
 
 ```
-Total 100 requests
+Given 100 requests
 of which
     70 returned HTTP 200
     10 returned HTTP 500 (Server Error)
@@ -136,11 +136,11 @@ To calculate this in Prometheus/Grafana:
 
 The default Prometheus libraries for ASP.NET are quite verbose and can result in a large number of series or high-cardinality labels.
 
-By design this library only tracks _genuine_ endpoints of your application since generally, metrics about non-existent endpoints offer little value (e.g. bots trying to hit `/phpmyadmin`). Note that a metric for unmatched paths is planned for the future.
+By design this library only tracks _genuine_ endpoints of your application since generally, metrics about non-existent endpoints offer little value (e.g. bots trying to hit `/phpmyadmin`). Note that a metric for unmatched paths is something we're thinking about.
 
 By default the library uses the following approach to resolve the operation name
 
-1. Use the name of the route if set on your controller action, for example:
+1. The name of the route if set on your controller action, for example:
     ```
     [HttpGet("status/{code:int}", Name = "get_status")]
     ```
@@ -148,8 +148,68 @@ By default the library uses the following approach to resolve the operation name
 
 In general we recommend explicitly naming your route to avoid your metrics changing if your URI structure is updated.
 
+#### Tracking Errors
 
+By default the following status codes are determined to be an error:
 
+- `400 - 499` - Error Type: Invalid Request
+- `>500` - Error Type: Internal
 
+What we can't track automatically are errors that are the result of internal or external dependencies. For these you have two options:
 
+1. Set the SLI error using `HttpContext.SetSliError()`, for example:
 
+    ```c#
+    HttpContext.SetSliError(ErrorType.ExternalDependency, "skynet");
+    ```
+2. Throw an `SliException` (or any derived type), for example:
+    ```c#
+    throw new SliException(ErrorType.ExternalDependency, "skynet");
+    ```
+
+## Extending O9d.Observability
+
+This project was heavily inspired by the [Open Telemetry Libraries for .NET](https://github.com/open-telemetry/opentelemetry-dotnet).
+
+We wanted to make it easy to plug in additional instrumentation without a lot of ceremony. Suppose you want to add instrument operations in the DazzleDB .NET client. Fortunately the client already emits events to a Diagnostic Source and the Observability library makes it easy to tap into them. 
+
+### Create an observer
+
+Create a class that implements `IObserver<KeyValuePair<string, object?>>` to receive Diagnostic Listener events:
+
+```c#
+internal class DazzleDbMetricsObserver : IObserver<KeyValuePair<string, object?>>
+{
+}
+```
+
+### Add the `O9d.Observability` package
+
+```
+dotnet add package O9d.Observability
+```
+
+### Create an extension for Observability Builder
+
+```c#
+public static class DazzleDbObservabilityBuilderExtensions
+{
+    public static IObservabilityBuilder AddDazzleDbMetrics(this IObservabilityBuilder builder)
+    {
+        if (builder is null) throw new ArgumentNullException(nameof(builder));
+
+        return builder.AddDiagnosticSource("DazzleDb", new DazzleDbMetricsObserver());
+    }
+}
+```
+
+The above code makes use of the `AddDiagnosticSource` extension to handle the boilerplate `DiagnosticSource` subscription logic and ensure subscribers are tracked.
+
+### Package your library and update your applications
+
+```c#
+services.AddObservability(builder =>
+{
+    builder.AddDazzleDbMetrics();
+});
+```
