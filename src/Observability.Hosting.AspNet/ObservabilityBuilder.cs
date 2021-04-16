@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using O9d.Observability;
 
 namespace O9d.Observability.Hosting.AspNet
 {
