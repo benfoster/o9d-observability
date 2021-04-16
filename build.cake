@@ -301,12 +301,12 @@ Task("Default")
 
 Task("CI")
     .IsDependentOn("SonarBegin")
-    .IsDependentOn("Default");
+    .IsDependentOn("Default")
     .IsDependentOn("UploadCoverage")
     .IsDependentOn("SonarEnd");
 
 Task("Publish")
-    .IsDependentOn("CI");
+    .IsDependentOn("CI")
     .IsDependentOn("PublishPackages")
     .IsDependentOn("PublishDocs");
 
