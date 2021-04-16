@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Routing;
@@ -24,7 +23,7 @@ namespace O9d.Metrics.AspNet
             new CounterConfiguration
             {
                 SuppressInitialValue = true,
-                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency_name" }
+                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
             });
 
         private static readonly ICollector<IObserver> HttpRequestDuration = Prometheus.Metrics
@@ -69,7 +68,7 @@ namespace O9d.Metrics.AspNet
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
 
-            if (_options.ShouldInstrument(httpContext.Request.Path))
+            if (!_options.ShouldInstrument(httpContext.Request.Path))
             {
                 return;
             }

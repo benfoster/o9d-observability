@@ -14,6 +14,8 @@ namespace AspNetExample.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        
+        // http GET https://localhost:5001/weatherforecast --verify no -v        
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

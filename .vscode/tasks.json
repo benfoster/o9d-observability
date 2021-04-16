@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/test/Core.Tests/Core.Tests.csproj",
+                "${workspaceFolder}/examples/AspNetExample/AspNetExample.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/test/Core.Tests/Core.Tests.csproj",
+                "${workspaceFolder}/examples/AspNetExample/AspNetExample.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/test/Core.Tests/Core.Tests.csproj",
+                "${workspaceFolder}/examples/AspNetExample/AspNetExample.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

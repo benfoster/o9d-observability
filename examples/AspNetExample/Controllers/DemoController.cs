@@ -9,22 +9,19 @@ namespace examples.AspNetExample.Controllers
     [Route("[controller]")]
     public class DemoController : ControllerBase
     {
-        // http GET https://localhost:5001/demo/status/get_customer/200 --verify no -v
+        // http GET https://localhost:5001/demo/status/200 --verify no -v
         
-        [HttpGet("status/{operation}/{code:int}")]
-        public IActionResult Status(string operation, int code)
+        [HttpGet("status/{code:int}", Name = "get_status")]
+        public IActionResult Status(int code)
         {
-            HttpContext.SetOperation(operation);
             return StatusCode(code);
         }
 
         
-        // http GET https://localhost:5001/demo/error/get_customer?errorType=ExternalDependency&dependency=ob-uk --verify no -v
-        [HttpGet("error/{operation}")]
-        public IActionResult Error(string operation, [FromQuery]ErrorType? errorType, [FromQuery]string? dependency)
+        // http GET https://localhost:5001/demo/error?errorType=ExternalDependency&dependency=ob-uk --verify no -v
+        [HttpGet("error", Name = "get_error")]
+        public IActionResult Error([FromQuery]ErrorType? errorType, [FromQuery]string? dependency)
         {
-            HttpContext.SetOperation(operation);
-            
             if (errorType.HasValue)
             {
                 HttpContext.SetSliError(errorType.Value, dependency);
@@ -33,11 +30,10 @@ namespace examples.AspNetExample.Controllers
             return StatusCode(500);
         }
 
-        // http GET https://localhost:5001/demo/exception/get_customer --verify no -v
-        [HttpGet("exception/{operation}")]
-        public IActionResult Exception(string operation)
+        // http GET https://localhost:5001/demo/exception --verify no -v
+        [HttpGet("exception", Name = "get_exception")]
+        public IActionResult Exception()
         {
-            HttpContext.SetOperation(operation);
             throw new HttpRequestException("Invalid request");
         }
     }
