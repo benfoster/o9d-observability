@@ -68,9 +68,9 @@ services.AddObservability(builder =>
 
 By default the library adds the following Prometheus metrics:
 
-**`http_server_request_duration_seconds`**
+#### `http_server_request_duration_seconds`
 
-A histogram (default) or summary Tracks the duration in seconds that HTTP requests take to process. 
+A histogram (default) or summary that tracks the duration in seconds that HTTP requests take to process. 
 
 Labels:
 
@@ -79,7 +79,7 @@ Labels:
 | `operation`  | A descriptor for the operation and endpoint that was requested  | `get_customers`  |
 | `status_code` | The status code returned by your service  | `200`  |
 
-**`http_server_requests_in_progress`**
+#### `http_server_requests_in_progress`
 
 A gauge that tracks the number of requests in progress. 
 
@@ -89,7 +89,7 @@ Labels:
 |---|---|---|
 | `operation`  | A descriptor for the operation and endpoint that was requested  | `get_customers`  |
 
-**`http_server_errors_total`**
+#### `http_server_errors_total`
 
 A counter that tracks the number of HTTP requests resulting in an error.
 
