@@ -300,15 +300,15 @@ Task("Default")
     .IsDependentOn("BuildDocs");
 
 Task("CI")
-    //.IsDependentOn("SonarBegin")
-    .IsDependentOn("Default");
-    //.IsDependentOn("UploadCoverage")
-    //.IsDependentOn("SonarEnd");
+    .IsDependentOn("SonarBegin")
+    .IsDependentOn("Default")
+    .IsDependentOn("UploadCoverage")
+    .IsDependentOn("SonarEnd");
 
 Task("Publish")
-    .IsDependentOn("CI");
-    //.IsDependentOn("PublishPackages")
-    //.IsDependentOn("PublishDocs");
+    .IsDependentOn("CI")
+    .IsDependentOn("PublishPackages")
+    .IsDependentOn("PublishDocs");
 
 RunTarget(target);
 
