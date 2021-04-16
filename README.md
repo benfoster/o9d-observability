@@ -14,7 +14,7 @@ O[pinionate]d Observability Extensions for .NET.
 
 ## Quick Start
 
-In order to make use of the Observability libraries you need to initialise the Observability Host. Currently, only ASP.NET Core hosts are supported.
+In order to make use of the Observability libraries you need to initialize the Observability Host. Currently, only ASP.NET Core hosts are supported.
 
 Add the O9d.Observability.Hosting.AspNet package from [NuGet](https://www.nuget.org/packages/O9d.Observability.Hosting.AspNet)
 
@@ -22,7 +22,7 @@ Add the O9d.Observability.Hosting.AspNet package from [NuGet](https://www.nuget.
 dotnet add package O9d.Observability.Hosting.AspNet
 ```
 
-You can then update your `Startup.cs` file to initialise the host:
+You can then update your `Startup.cs` file to initialize the host:
 
 ```c#
 services.AddObservability(builder =>
