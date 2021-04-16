@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using O9d.Observability;
 
@@ -10,13 +11,13 @@ namespace O9d.Metrics.AspNet
         private const string Prefix = "O9d.Observability";
 
         private const string RequestOperationKey = Prefix + "_ReqOp";
-        public static void SetOperation(this HttpContext httpContext, string operation)
+        internal static void SetOperation(this HttpContext httpContext, string operation)
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
             httpContext.Items[RequestOperationKey] = operation;
         }
 
-        public static string? GetOperation(this HttpContext httpContext)
+        internal static string? GetOperation(this HttpContext httpContext)
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
             httpContext.Items.TryGetValue(RequestOperationKey, out object? operation);
@@ -25,7 +26,7 @@ namespace O9d.Metrics.AspNet
 
         private const string RequestTimeStampKey = Prefix + "_ReqTs";
         private static readonly double TimestampToTicks = TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency;
-        public static void SetRequestTimestamp(this HttpContext httpContext, long? timestamp = null)
+        internal static void SetRequestTimestamp(this HttpContext httpContext, long? timestamp = null)
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
             httpContext.Items[RequestTimeStampKey] = timestamp ?? Stopwatch.GetTimestamp();
@@ -47,7 +48,7 @@ namespace O9d.Metrics.AspNet
         private const string SliErrorTypeKey = Prefix + "_ErrType";
         private const string SliErrorDependencyKey = Prefix + "_ErrDependency";
 
-        public static bool HasError(this HttpContext httpContext, out (ErrorType, string?)? error)
+        internal static bool HasError(this HttpContext httpContext, out (ErrorType, string?)? error)
         {
             if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
             error = default;
@@ -56,6 +57,12 @@ namespace O9d.Metrics.AspNet
             {
                 httpContext.Items.TryGetValue(SliErrorDependencyKey, out object? dependency);
                 error = (errorType, dependency as string);
+                return true;
+            }
+
+            if (httpContext.GetCurrentException() is SliException sliEx)
+            {
+                error = (sliEx.ErrorType, sliEx.Dependency);
                 return true;
             }
 
@@ -71,6 +78,14 @@ namespace O9d.Metrics.AspNet
             {
                 httpContext.Items[SliErrorDependencyKey] = errorDependency;
             }
+        }
+
+        internal static Exception? GetCurrentException(this HttpContext httpContext)
+        {
+            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+            ExceptionHandlerFeature? exceptionFeature = httpContext.Features?.Get<ExceptionHandlerFeature>();
+
+            return exceptionFeature?.Error;
         }
     }
 }
