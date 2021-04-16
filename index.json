@@ -12,12 +12,7 @@
   "api/O9d.Metrics.AspNet.html": {
     "href": "api/O9d.Metrics.AspNet.html",
     "title": "Namespace O9d.Metrics.AspNet | Observability Documentation",
-    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions HttpMetrics MetricsHttpContextExtensions"
-  },
-  "api/O9d.Metrics.AspNet.HttpMetrics.html": {
-    "href": "api/O9d.Metrics.AspNet.HttpMetrics.html",
-    "title": "Class HttpMetrics | Observability Documentation",
-    "keywords": "Class HttpMetrics Inheritance Object HttpMetrics Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public class HttpMetrics : object"
+    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions MetricsHttpContextExtensions"
   },
   "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html": {
     "href": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",
@@ -47,12 +42,12 @@
   "api/O9d.Observability.html": {
     "href": "api/O9d.Observability.html",
     "title": "Namespace O9d.Observability | Observability Documentation",
-    "keywords": "Namespace O9d.Observability Classes DiagnosticObservabilityBuilderExtensions ObservabilityServiceCollectionExtensions Extensions for Interfaces IInstrumentation Defines an instrumentation component that can be initialised by the Observability Host. IObservabilityBuilder Extensibility point for adding observability components. Enums ErrorType"
+    "keywords": "Namespace O9d.Observability Classes DiagnosticObservabilityBuilderExtensions ObservabilityServiceCollectionExtensions Extensions for Interfaces IInstrumentation Defines an instrumentation component that can be initialized by the Observability Host. IObservabilityBuilder Extensibility point for adding observability components. Enums ErrorType"
   },
   "api/O9d.Observability.IInstrumentation.html": {
     "href": "api/O9d.Observability.IInstrumentation.html",
     "title": "Interface IInstrumentation | Observability Documentation",
-    "keywords": "Interface IInstrumentation Defines an instrumentation component that can be initialised by the Observability Host. Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public interface IInstrumentation Methods | Improve this Doc View Source StartAsync(CancellationToken) Start instrumenting. Declaration Task StartAsync(CancellationToken cancellationToken) Parameters Type Name Description CancellationToken cancellationToken Returns Type Description Task"
+    "keywords": "Interface IInstrumentation Defines an instrumentation component that can be initialized by the Observability Host. Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public interface IInstrumentation Methods | Improve this Doc View Source StartAsync(CancellationToken) Start instrumenting. Declaration Task StartAsync(CancellationToken cancellationToken) Parameters Type Name Description CancellationToken cancellationToken Returns Type Description Task"
   },
   "api/O9d.Observability.IObservabilityBuilder.html": {
     "href": "api/O9d.Observability.IObservabilityBuilder.html",

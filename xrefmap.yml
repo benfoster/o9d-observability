@@ -61,12 +61,6 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
   nameWithType: AspNetMetricsOptions.ShouldInstrument
-- uid: O9d.Metrics.AspNet.HttpMetrics
-  name: HttpMetrics
-  href: api/O9d.Metrics.AspNet.HttpMetrics.html
-  commentId: T:O9d.Metrics.AspNet.HttpMetrics
-  fullName: O9d.Metrics.AspNet.HttpMetrics
-  nameWithType: HttpMetrics
 - uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions
   name: MetricsHttpContextExtensions
   href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html
