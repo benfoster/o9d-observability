@@ -128,7 +128,7 @@ To calculate this in Prometheus/Grafana:
 (sum(rate(http_server_request_duration_seconds_count[10m])) - sum(rate(http_request_error_total[10m]))) / 
 ( 
     sum(rate(http_server_request_duration_seconds_count[10m])) - 
-    sum(rate(http_request_error_total{sli_error_type="InvalidRequestError"}[10m]) OR on() vector(0))
+    sum(rate(http_request_error_total{sli_error_type="invalid_request"}[10m]) OR on() vector(0))
 )
 ```
 
@@ -141,6 +141,7 @@ By design this library only tracks _genuine_ endpoints of your application since
 By default the library uses the following approach to resolve the operation name
 
 1. The name of the route if set on your controller action, for example:
+    c#
     ```
     [HttpGet("status/{code:int}", Name = "get_status")]
     ```
@@ -171,7 +172,7 @@ What we can't track automatically are errors that are the result of internal or 
 
 This project was heavily inspired by the [Open Telemetry Libraries for .NET](https://github.com/open-telemetry/opentelemetry-dotnet).
 
-We wanted to make it easy to plug in additional instrumentation without a lot of ceremony. Suppose you want to add instrument operations in the DazzleDB .NET client. Fortunately the client already emits events to a Diagnostic Source and the Observability library makes it easy to tap into them. 
+We wanted to make it easy to plug in additional instrumentation without a lot of ceremony. Suppose you want to instrument operations in the DazzleDB .NET client. Fortunately the client already emits events to a Diagnostic Source and the Observability library makes it easy to tap into them. 
 
 ### Create an observer
 
