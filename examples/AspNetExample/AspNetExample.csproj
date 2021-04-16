@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AspNet\AspNet.csproj" />
+    <ProjectReference Include="..\..\src\Observability.Hosting.AspNet\Observability.Hosting.AspNet.csproj" />
+    <ProjectReference Include="..\..\src\Metrics.AspNet\Metrics.AspNet.csproj" />
   </ItemGroup>
 
 </Project>

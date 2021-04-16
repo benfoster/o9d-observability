@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Routing;
 using Prometheus;
+using O9d.Observability;
 
-namespace O9d.Observability.AspNet.Metrics
+namespace O9d.Metrics.AspNet
 {
     internal class AspNetMetricsObserver : IObserver<KeyValuePair<string, object?>>
     {

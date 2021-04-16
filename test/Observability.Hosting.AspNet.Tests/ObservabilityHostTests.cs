@@ -2,10 +2,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Moq;
-using O9d.Observability.AspNet.Hosting;
+using O9d.Observability.Hosting.AspNet;
 using Xunit;
 
-namespace O9d.Observability.AspNet.Tests.Hosting
+namespace O9d.Observability.Hosting.AspNet.Tests
 {
     public class ObservabilityHostTests
     {

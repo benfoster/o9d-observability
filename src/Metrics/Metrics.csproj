@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+        <RootNamespace>O9d.Metrics</RootNamespace>
+        <AssemblyName>O9d.Metrics</AssemblyName>
+        <PackageId>O9d.Metrics</PackageId>
+        <Description>Opinionated metrics extensions for .NET</Description>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Observability\Observability.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\shared\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+</Project>

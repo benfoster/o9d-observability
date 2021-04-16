@@ -1,8 +1,8 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using O9d.Observability.AspNet.Hosting;
+using O9d.Observability;
 
-namespace O9d.Observability.AspNet
+namespace O9d.Observability.Hosting.AspNet
 {
     ///<inheritdoc/>
     internal class ObservabilityBuilder : IObservabilityBuilder

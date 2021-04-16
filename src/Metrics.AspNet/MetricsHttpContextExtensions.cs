@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing.Constraints;
+using O9d.Observability;
 
-namespace O9d.Observability.AspNet.Metrics
+namespace O9d.Metrics.AspNet
 {
     public static class MetricsHttpContextExtensions
     {
         private const string Prefix = "O9d.Observability";
-
 
         private const string RequestOperationKey = Prefix + "_ReqOp";
         public static void SetOperation(this HttpContext httpContext, string operation)

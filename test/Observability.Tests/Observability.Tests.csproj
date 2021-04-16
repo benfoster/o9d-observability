@@ -21,6 +21,6 @@
     <PackageReference Include="Moq" Version="4.16.1"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\Core.csproj"/>
+    <ProjectReference Include="..\..\src\Observability\Observability.csproj"/>
   </ItemGroup>
 </Project>

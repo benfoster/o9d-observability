@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+        <RootNamespace>O9d.Observability.Hosting.AspNet</RootNamespace>
+        <AssemblyName>O9d.Observability.Hosting.AspNet</AssemblyName>
+        <PackageId>O9d.Observability.Hosting.AspNet</PackageId>
+        <Description>Opinionated observability extensions for ASP.NET</Description>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="MinVer" Version="2.4.0" PrivateAssets="All" />
+        <PackageReference Include="prometheus-net" Version="[4.1,5.0)" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\shared\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Observability\Observability.csproj" />
+    </ItemGroup>
+</Project>

@@ -3,11 +3,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using O9d.Observability.AspNet;
+using O9d.Observability.Hosting.AspNet;
 using Shouldly;
 using Xunit;
 
-namespace O9d.Observability.Core.Tests.Internal
+namespace O9d.Observability.Hosting.AspNet.Tests
 {
     public class ObservabilityBuilderTests
     {

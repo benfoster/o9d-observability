@@ -1,10 +1,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using O9d.Observability.AspNet.Hosting;
+using O9d.Observability.Hosting.AspNet;
 using Shouldly;
 using Xunit;
 
-namespace O9d.Observability.Core.Tests
+namespace O9d.Observability.Hosting.AspNet.Tests
 {
     public class ObservabilityServiceCollectionExtensionsTests
     {        

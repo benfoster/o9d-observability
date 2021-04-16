@@ -1,7 +1,7 @@
 using System;
-using O9d.Observability.AspNet.Metrics;
+using O9d.Observability;
 
-namespace O9d.Observability
+namespace O9d.Metrics.AspNet
 {
     public static class AspNetMetricsObservabilityBuilderExtensions
     {

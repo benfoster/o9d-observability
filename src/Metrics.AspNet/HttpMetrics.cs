@@ -1,4 +1,4 @@
-namespace O9d.Observability.AspNet.Metrics
+namespace O9d.Metrics.AspNet
 {
     public class HttpMetrics
     {

@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Http;
 
-namespace O9d.Observability.AspNet.Metrics
+namespace O9d.Metrics.AspNet
 {
     public class AspNetMetricsOptions
     {
