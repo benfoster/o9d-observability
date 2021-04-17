@@ -6,7 +6,7 @@ on:
     tags: ['*']
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,10 +17,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11.0.x
-      - name: Setup .NET
+      - name: Setup .NET 5.0
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+      - name: Setup .NET 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
       - name: Restore tools
         run: dotnet tool restore
       - name: Run the build script
@@ -36,3 +40,5 @@ jobs:
           NUGET_PRE_API_URL: https://nuget.pkg.github.com/benfoster/index.json
         with:
           target: Publish
+          arguments: |
+            force-docs: true

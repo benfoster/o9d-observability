@@ -8,7 +8,6 @@
       <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="MinVer" Version="2.4.0" PrivateAssets="All"/>
       <FrameworkReference Include="Microsoft.AspNetCore.App" />
       <PackageReference Include="prometheus-net" Version="[4.1,5.0)"/>
     </ItemGroup>

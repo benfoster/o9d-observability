@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using O9d.Observability;
 
 namespace O9d.Observability.Hosting.AspNet
 {
