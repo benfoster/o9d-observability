@@ -1,1 +1,2 @@
-Error type values should be tracked in snake case e.g. internal_dependency
+[x] Error type values should be tracked in snake case e.g. internal_dependency
+[] Is PropertyFetcher thread safe?

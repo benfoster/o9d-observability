@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Http;
+using Prometheus;
 
 namespace O9d.Metrics.AspNet
 {
