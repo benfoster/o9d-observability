@@ -77,7 +77,7 @@
       "output": {
         ".html": {
           "relative_path": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",
-          "hash": "fm+JWK6euY/ny6hGAB1tBQ=="
+          "hash": "7izS0lqrWMJoYgrsHMFvgg=="
         }
       },
       "is_incremental": false,
@@ -193,11 +193,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.PropertyFetcher-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.PropertyFetcher-1.html",
+          "hash": "IpJxoGjc22BraVh5MTVUGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Observability.SliException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Observability.SliException.html",
+          "hash": "fT9Vk2F1ARrlPIxP75duUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/O9d.Observability.yml",
       "output": {
         ".html": {
           "relative_path": "api/O9d.Observability.html",
-          "hash": "wVilKLMyECpeb6y3uXkJ5Q=="
+          "hash": "9YmvJ5PJh7gxEIZXolDLNw=="
         }
       },
       "is_incremental": false,
@@ -209,7 +233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "iERF8BPzyZEZ834ss5eoZA=="
+          "hash": "cjkh5MhbmXv8q8c90nb/bw=="
         }
       },
       "is_incremental": false,
@@ -248,7 +272,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 14,
+          "total_file_count": 16,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

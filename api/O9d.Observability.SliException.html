@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MetricsHttpContextExtensions
+    <title>Class SliException
    | Observability Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MetricsHttpContextExtensions
+    <meta name="title" content="Class SliException
    | Observability Documentation ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -78,40 +78,40 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions">
+            <article class="content wrap" id="_content" data-uid="O9d.Observability.SliException">
   
   
-  <h1 id="O9d_Metrics_AspNet_MetricsHttpContextExtensions" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions" class="text-break">Class MetricsHttpContextExtensions
+  <h1 id="O9d_Observability_SliException" data-uid="O9d.Observability.SliException" class="text-break">Class SliException
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">MetricsHttpContextExtensions</span></div>
+    <div class="level1"><span class="xref">SliException</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="O9d.Metrics.AspNet.html">O9d.Metrics.AspNet</a></h6>
-  <h6><strong>Assembly</strong>: O9d.Metrics.AspNet.dll</h6>
-  <h5 id="O9d_Metrics_AspNet_MetricsHttpContextExtensions_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="O9d.Observability.html">O9d.Observability</a></h6>
+  <h6><strong>Assembly</strong>: O9d.Observability.dll</h6>
+  <h5 id="O9d_Observability_SliException_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MetricsHttpContextExtensions : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class SliException : Exception</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_HttpContext_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext%2CSystem.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Observability_SliException__ctor_O9d_Observability_ErrorType_System_String_.md&amp;value=---%0Auid%3A%20O9d.Observability.SliException.%23ctor(O9d.Observability.ErrorType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/MetricsHttpContextExtensions.cs/#L35">View Source</a>
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Observability/SliException.cs/#L7">View Source</a>
   </span>
-  <a id="O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration*"></a>
-  <h4 id="O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_HttpContext_System_Nullable_System_Int64__" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext,System.Nullable{System.Int64})">GetRequestDuration(HttpContext, Nullable&lt;Int64&gt;)</h4>
+  <a id="O9d_Observability_SliException__ctor_" data-uid="O9d.Observability.SliException.#ctor*"></a>
+  <h4 id="O9d_Observability_SliException__ctor_O9d_Observability_ErrorType_System_String_" data-uid="O9d.Observability.SliException.#ctor(O9d.Observability.ErrorType,System.String)">SliException(ErrorType, String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TimeSpan GetRequestDuration(this HttpContext httpContext, long? currentTimestamp = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public SliException(ErrorType errorType, string dependency)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -123,71 +123,76 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">HttpContext</span></td>
-        <td><span class="parametername">httpContext</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
-        <td><span class="parametername">currentTimestamp</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TimeSpan</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_HttpContext_O9d_Observability_ErrorType_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext%2CO9d.Observability.ErrorType%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/MetricsHttpContextExtensions.cs/#L66">View Source</a>
-  </span>
-  <a id="O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError*"></a>
-  <h4 id="O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_HttpContext_O9d_Observability_ErrorType_System_Nullable_System_String__" data-uid="O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext,O9d.Observability.ErrorType,System.Nullable{System.String})">SetSliError(HttpContext, ErrorType, Nullable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SetSliError(this HttpContext httpContext, ErrorType errorType, string? errorDependency = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">HttpContext</span></td>
-        <td><span class="parametername">httpContext</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="O9d.Observability.ErrorType.html">ErrorType</a></td>
         <td><span class="parametername">errorType</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
-        <td><span class="parametername">errorDependency</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Observability_SliException_Dependency.md&amp;value=---%0Auid%3A%20O9d.Observability.SliException.Dependency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Observability/SliException.cs/#L14">View Source</a>
+  </span>
+  <a id="O9d_Observability_SliException_Dependency_" data-uid="O9d.Observability.SliException.Dependency*"></a>
+  <h4 id="O9d_Observability_SliException_Dependency" data-uid="O9d.Observability.SliException.Dependency">Dependency</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Dependency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Observability_SliException_ErrorType.md&amp;value=---%0Auid%3A%20O9d.Observability.SliException.ErrorType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Observability/SliException.cs/#L13">View Source</a>
+  </span>
+  <a id="O9d_Observability_SliException_ErrorType_" data-uid="O9d.Observability.SliException.ErrorType*"></a>
+  <h4 id="O9d_Observability_SliException_ErrorType" data-uid="O9d.Observability.SliException.ErrorType">ErrorType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ErrorType ErrorType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="O9d.Observability.ErrorType.html">ErrorType</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -200,10 +205,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_MetricsHttpContextExtensions.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.MetricsHttpContextExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Observability_SliException.md&amp;value=---%0Auid%3A%20O9d.Observability.SliException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/MetricsHttpContextExtensions.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Observability/SliException.cs/#L5" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

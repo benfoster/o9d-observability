@@ -137,19 +137,6 @@ references:
   commentId: T:O9d.Metrics.AspNet.MetricsHttpContextExtensions
   fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions
   nameWithType: MetricsHttpContextExtensions
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
-  name: GetOperation(HttpContext)
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetOperation_HttpContext_
-  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation(HttpContext)
-  nameWithType: MetricsHttpContextExtensions.GetOperation(HttpContext)
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation*
-  name: GetOperation
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetOperation_
-  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation
-  isSpec: "True"
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetOperation
-  nameWithType: MetricsHttpContextExtensions.GetOperation
 - uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration(HttpContext,System.Nullable{System.Int64})
   name: GetRequestDuration(HttpContext, Nullable<Int64>)
   href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_GetRequestDuration_HttpContext_System_Nullable_System_Int64__
@@ -166,51 +153,6 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.GetRequestDuration
   nameWithType: MetricsHttpContextExtensions.GetRequestDuration
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext,System.Nullable{System.ValueTuple{O9d.Observability.ErrorType,System.Nullable{System.String}}}@)
-  name: HasError(HttpContext, out Nullable<(ErrorType, Nullable<String>)>)
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_HasError_HttpContext_System_Nullable_System_ValueTuple_O9d_Observability_ErrorType_System_Nullable_System_String_____
-  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext,System.Nullable{System.ValueTuple{O9d.Observability.ErrorType,System.Nullable{System.String}}}@)
-  name.vb: HasError(HttpContext, ByRef Nullable(Of (ErrorType, Nullable(Of String))))
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext, out System.Nullable<System.ValueTuple<O9d.Observability.ErrorType, System.Nullable<System.String>>>)
-  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError(HttpContext, ByRef System.Nullable(Of System.ValueTuple(Of O9d.Observability.ErrorType, System.Nullable(Of System.String))))
-  nameWithType: MetricsHttpContextExtensions.HasError(HttpContext, out Nullable<(ErrorType, Nullable<String>)>)
-  nameWithType.vb: MetricsHttpContextExtensions.HasError(HttpContext, ByRef Nullable(Of (ErrorType, Nullable(Of String))))
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError*
-  name: HasError
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_HasError_
-  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError
-  isSpec: "True"
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.HasError
-  nameWithType: MetricsHttpContextExtensions.HasError
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext,System.String)
-  name: SetOperation(HttpContext, String)
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetOperation_HttpContext_System_String_
-  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext,System.String)
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation(HttpContext, System.String)
-  nameWithType: MetricsHttpContextExtensions.SetOperation(HttpContext, String)
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation*
-  name: SetOperation
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetOperation_
-  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation
-  isSpec: "True"
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetOperation
-  nameWithType: MetricsHttpContextExtensions.SetOperation
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext,System.Nullable{System.Int64})
-  name: SetRequestTimestamp(HttpContext, Nullable<Int64>)
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetRequestTimestamp_HttpContext_System_Nullable_System_Int64__
-  commentId: M:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext,System.Nullable{System.Int64})
-  name.vb: SetRequestTimestamp(HttpContext, Nullable(Of Int64))
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, System.Nullable<System.Int64>)
-  fullName.vb: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, System.Nullable(Of System.Int64))
-  nameWithType: MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, Nullable<Int64>)
-  nameWithType.vb: MetricsHttpContextExtensions.SetRequestTimestamp(HttpContext, Nullable(Of Int64))
-- uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp*
-  name: SetRequestTimestamp
-  href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetRequestTimestamp_
-  commentId: Overload:O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp
-  isSpec: "True"
-  fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetRequestTimestamp
-  nameWithType: MetricsHttpContextExtensions.SetRequestTimestamp
 - uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError(HttpContext,O9d.Observability.ErrorType,System.Nullable{System.String})
   name: SetSliError(HttpContext, ErrorType, Nullable<String>)
   href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html#O9d_Metrics_AspNet_MetricsHttpContextExtensions_SetSliError_HttpContext_O9d_Observability_ErrorType_System_Nullable_System_String__
@@ -488,3 +430,109 @@ references:
   isSpec: "True"
   fullName: O9d.Observability.ObservabilityServiceCollectionExtensions.AddObservability
   nameWithType: ObservabilityServiceCollectionExtensions.AddObservability
+- uid: O9d.Observability.PropertyFetcher`1
+  name: PropertyFetcher<T>
+  href: api/O9d.Observability.PropertyFetcher-1.html
+  commentId: T:O9d.Observability.PropertyFetcher`1
+  name.vb: PropertyFetcher(Of T)
+  fullName: O9d.Observability.PropertyFetcher<T>
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T)
+  nameWithType: PropertyFetcher<T>
+  nameWithType.vb: PropertyFetcher(Of T)
+- uid: O9d.Observability.PropertyFetcher`1.#ctor(System.String)
+  name: PropertyFetcher(String)
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1__ctor_System_String_
+  commentId: M:O9d.Observability.PropertyFetcher`1.#ctor(System.String)
+  fullName: O9d.Observability.PropertyFetcher<T>.PropertyFetcher(System.String)
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).PropertyFetcher(System.String)
+  nameWithType: PropertyFetcher<T>.PropertyFetcher(String)
+  nameWithType.vb: PropertyFetcher(Of T).PropertyFetcher(String)
+- uid: O9d.Observability.PropertyFetcher`1.#ctor*
+  name: PropertyFetcher
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1__ctor_
+  commentId: Overload:O9d.Observability.PropertyFetcher`1.#ctor
+  isSpec: "True"
+  fullName: O9d.Observability.PropertyFetcher<T>.PropertyFetcher
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).PropertyFetcher
+  nameWithType: PropertyFetcher<T>.PropertyFetcher
+  nameWithType.vb: PropertyFetcher(Of T).PropertyFetcher
+- uid: O9d.Observability.PropertyFetcher`1.Fetch(System.Object)
+  name: Fetch(Object)
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1_Fetch_System_Object_
+  commentId: M:O9d.Observability.PropertyFetcher`1.Fetch(System.Object)
+  fullName: O9d.Observability.PropertyFetcher<T>.Fetch(System.Object)
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).Fetch(System.Object)
+  nameWithType: PropertyFetcher<T>.Fetch(Object)
+  nameWithType.vb: PropertyFetcher(Of T).Fetch(Object)
+- uid: O9d.Observability.PropertyFetcher`1.Fetch*
+  name: Fetch
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1_Fetch_
+  commentId: Overload:O9d.Observability.PropertyFetcher`1.Fetch
+  isSpec: "True"
+  fullName: O9d.Observability.PropertyFetcher<T>.Fetch
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).Fetch
+  nameWithType: PropertyFetcher<T>.Fetch
+  nameWithType.vb: PropertyFetcher(Of T).Fetch
+- uid: O9d.Observability.PropertyFetcher`1.TryFetch(System.Nullable{System.Object},`0@)
+  name: TryFetch(Nullable<Object>, out T)
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1_TryFetch_System_Nullable_System_Object___0__
+  commentId: M:O9d.Observability.PropertyFetcher`1.TryFetch(System.Nullable{System.Object},`0@)
+  name.vb: TryFetch(Nullable(Of Object), ByRef T)
+  fullName: O9d.Observability.PropertyFetcher<T>.TryFetch(System.Nullable<System.Object>, out T)
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).TryFetch(System.Nullable(Of System.Object), ByRef T)
+  nameWithType: PropertyFetcher<T>.TryFetch(Nullable<Object>, out T)
+  nameWithType.vb: PropertyFetcher(Of T).TryFetch(Nullable(Of Object), ByRef T)
+- uid: O9d.Observability.PropertyFetcher`1.TryFetch*
+  name: TryFetch
+  href: api/O9d.Observability.PropertyFetcher-1.html#O9d_Observability_PropertyFetcher_1_TryFetch_
+  commentId: Overload:O9d.Observability.PropertyFetcher`1.TryFetch
+  isSpec: "True"
+  fullName: O9d.Observability.PropertyFetcher<T>.TryFetch
+  fullName.vb: O9d.Observability.PropertyFetcher(Of T).TryFetch
+  nameWithType: PropertyFetcher<T>.TryFetch
+  nameWithType.vb: PropertyFetcher(Of T).TryFetch
+- uid: O9d.Observability.SliException
+  name: SliException
+  href: api/O9d.Observability.SliException.html
+  commentId: T:O9d.Observability.SliException
+  fullName: O9d.Observability.SliException
+  nameWithType: SliException
+- uid: O9d.Observability.SliException.#ctor(O9d.Observability.ErrorType,System.String)
+  name: SliException(ErrorType, String)
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException__ctor_O9d_Observability_ErrorType_System_String_
+  commentId: M:O9d.Observability.SliException.#ctor(O9d.Observability.ErrorType,System.String)
+  fullName: O9d.Observability.SliException.SliException(O9d.Observability.ErrorType, System.String)
+  nameWithType: SliException.SliException(ErrorType, String)
+- uid: O9d.Observability.SliException.#ctor*
+  name: SliException
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException__ctor_
+  commentId: Overload:O9d.Observability.SliException.#ctor
+  isSpec: "True"
+  fullName: O9d.Observability.SliException.SliException
+  nameWithType: SliException.SliException
+- uid: O9d.Observability.SliException.Dependency
+  name: Dependency
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException_Dependency
+  commentId: P:O9d.Observability.SliException.Dependency
+  fullName: O9d.Observability.SliException.Dependency
+  nameWithType: SliException.Dependency
+- uid: O9d.Observability.SliException.Dependency*
+  name: Dependency
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException_Dependency_
+  commentId: Overload:O9d.Observability.SliException.Dependency
+  isSpec: "True"
+  fullName: O9d.Observability.SliException.Dependency
+  nameWithType: SliException.Dependency
+- uid: O9d.Observability.SliException.ErrorType
+  name: ErrorType
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException_ErrorType
+  commentId: P:O9d.Observability.SliException.ErrorType
+  fullName: O9d.Observability.SliException.ErrorType
+  nameWithType: SliException.ErrorType
+- uid: O9d.Observability.SliException.ErrorType*
+  name: ErrorType
+  href: api/O9d.Observability.SliException.html#O9d_Observability_SliException_ErrorType_
+  commentId: Overload:O9d.Observability.SliException.ErrorType
+  isSpec: "True"
+  fullName: O9d.Observability.SliException.ErrorType
+  nameWithType: SliException.ErrorType
