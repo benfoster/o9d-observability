@@ -5,29 +5,52 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Routing;
 using Prometheus;
 using O9d.Observability;
+using Microsoft.AspNetCore.Mvc;
 
 namespace O9d.Metrics.AspNet
 {
     internal class AspNetMetricsObserver : IObserver<KeyValuePair<string, object?>>
     {
-        private static readonly Gauge HttpRequestsInProgress = Prometheus.Metrics
-            .CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
-            new GaugeConfiguration
-            {
-                SuppressInitialValue = true,
-                LabelNames = new[] { "operation" }
-            });
+        private readonly AspNetMetricsOptions _options;
+        private readonly IMetrics _metrics;
+        private readonly ICollector<ICounter> _httpErrorsTotalMetric;
+        private readonly ICollector<IGauge> _httpRequestsInProgressMetric;
+        private readonly ICollector<IObserver> _httpRequestDurationMetric;
 
-        private static readonly Counter HttpErrorsTotal = Prometheus.Metrics
-            .CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
+        public AspNetMetricsObserver(AspNetMetricsOptions options)
+            : this(options, new PrometheusMetrics())
+        {
+        }
+
+        public AspNetMetricsObserver(AspNetMetricsOptions options, IMetrics metrics)
+        {
+            _options = options ?? throw new ArgumentNullException(nameof(options));
+            _metrics = metrics ?? throw new ArgumentNullException(nameof(metrics));
+
+            // Support overrides here
+            _httpErrorsTotalMetric = CreateHttpErrorsTotalMetric();
+            _httpRequestsInProgressMetric = CreateHttpRequestsInProgressMetric();
+            _httpRequestDurationMetric = CreateHttpRequestDurationMetric();
+        }
+
+        private ICollector<ICounter> CreateHttpErrorsTotalMetric()
+            => _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
             new CounterConfiguration
             {
                 SuppressInitialValue = true,
                 LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
             });
 
-        private static readonly ICollector<IObserver> HttpRequestDuration = Prometheus.Metrics
-            .CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
+        private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
+            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
+            new GaugeConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation" }
+            });
+
+        private ICollector<IObserver> CreateHttpRequestDurationMetric()
+            => _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
              new SummaryConfiguration
              {
                  SuppressInitialValue = true,
@@ -40,13 +63,6 @@ namespace O9d.Metrics.AspNet
                     new QuantileEpsilonPair(0.99, 0.005),
                 }
              });
-
-        private readonly AspNetMetricsOptions _options;
-
-        public AspNetMetricsObserver(AspNetMetricsOptions options)
-        {
-            _options = options ?? throw new ArgumentNullException(nameof(options));
-        }
 
         public void OnNext(KeyValuePair<string, object?> kvp)
         {
@@ -94,7 +110,7 @@ namespace O9d.Metrics.AspNet
 
             httpContext.SetOperation(operation); // Avoids calculating again later
 
-            HttpRequestsInProgress
+            _httpRequestsInProgressMetric
                 .WithLabels(operation)
                 .Inc();
         }
@@ -116,18 +132,18 @@ namespace O9d.Metrics.AspNet
                 // Should we be tracking missed operations?
             }
 
-            HttpRequestDuration
+            _httpRequestDurationMetric
                 .WithLabels(operation, httpContext.Response.StatusCode.ToString())
                 .Observe(httpContext.GetRequestDuration().TotalSeconds);
 
             if (HasError(httpContext, out (ErrorType Type, string? Dependency)? error))
             {                
-                HttpErrorsTotal
+                _httpErrorsTotalMetric
                     .WithLabels(operation, error!.Value.Type.GetStringValue(), error!.Value.Dependency ?? string.Empty)
                     .Inc();
             }
 
-            HttpRequestsInProgress
+            _httpRequestsInProgressMetric
                 .WithLabels(operation)
                 .Dec();
         }
@@ -142,6 +158,14 @@ namespace O9d.Metrics.AspNet
 
         private static string? GetOperation(HttpContext httpContext)
         {
+            string? operation = httpContext.GetOperation();
+
+            if (operation != null)
+            {
+                return operation;
+            }
+            
+            // TODO should we just move the below into the above extension?
             Endpoint? endpoint = httpContext.GetEndpoint();
 
             return endpoint?.Metadata.GetMetadata<EndpointNameMetadata>()?.EndpointName
