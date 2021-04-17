@@ -9,6 +9,7 @@
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Observability\Observability.csproj" />
+        <PackageReference Include="prometheus-net" Version="[4.1,5.0)" />
     </ItemGroup>
     <ItemGroup>
         <None Include="..\shared\icon.png" Pack="true" PackagePath="\" />
