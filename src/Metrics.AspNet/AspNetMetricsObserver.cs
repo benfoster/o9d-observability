@@ -47,7 +47,6 @@ namespace O9d.Metrics.AspNet
                     break;
                 // Ref https://github.com/dotnet/aspnetcore/blob/52eff90fbcfca39b7eb58baad597df6a99a542b0/src/Middleware/Diagnostics/test/UnitTests/TestDiagnosticListener.cs
                 case "Microsoft.AspNetCore.Diagnostics.UnhandledException":
-                case "Microsoft.AspNetCore.Diagnostics.HandledException":
                     OnException(kvp);
                     break;
                 case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":

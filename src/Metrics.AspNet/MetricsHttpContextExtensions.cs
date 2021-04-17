@@ -60,12 +60,6 @@ namespace O9d.Metrics.AspNet
                 return true;
             }
 
-            if (httpContext.GetCurrentException() is SliException sliEx)
-            {
-                error = (sliEx.ErrorType, sliEx.Dependency);
-                return true;
-            }
-
             return false;
         }
 
@@ -78,14 +72,6 @@ namespace O9d.Metrics.AspNet
             {
                 httpContext.Items[SliErrorDependencyKey] = errorDependency;
             }
-        }
-
-        internal static Exception? GetCurrentException(this HttpContext httpContext)
-        {
-            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
-            ExceptionHandlerFeature? exceptionFeature = httpContext.Features?.Get<ExceptionHandlerFeature>();
-
-            return exceptionFeature?.Error;
         }
     }
 }
