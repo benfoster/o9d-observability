@@ -63,5 +63,17 @@ namespace O9d.Metrics.AspNet.Tests
             _httpContext.Response.StatusCode = 200;
             observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
         }
+
+        [Fact]
+        public void With_prometheus_metrics()
+        {
+            _httpContext.SetOperation("op");
+
+            var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), new PrometheusMetrics());
+            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
+            observer.OnNext(new("Microsoft.AspNetCore.Routing.EndpointMatched", _httpContext));
+            _httpContext.Response.StatusCode = 200;
+            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+        }
     }
 }
