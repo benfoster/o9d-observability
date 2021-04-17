@@ -16,6 +16,8 @@ namespace O9d.Metrics.AspNet
         private readonly ICollector<ICounter> _httpErrorsTotalMetric;
         private readonly ICollector<IGauge> _httpRequestsInProgressMetric;
         private readonly ICollector<IObserver> _httpRequestDurationMetric;
+        private readonly PropertyFetcher<Exception> _exceptionFetcher = new("exception");
+        private readonly PropertyFetcher<HttpContext> _exceptionContextFetcher = new("httpContext");
 
         public AspNetMetricsObserver(AspNetMetricsOptions options)
             : this(options, new PrometheusMetrics())
@@ -33,37 +35,6 @@ namespace O9d.Metrics.AspNet
             _httpRequestDurationMetric = CreateHttpRequestDurationMetric();
         }
 
-        private ICollector<ICounter> CreateHttpErrorsTotalMetric()
-            => _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
-            new CounterConfiguration
-            {
-                SuppressInitialValue = true,
-                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
-            });
-
-        private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
-            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
-            new GaugeConfiguration
-            {
-                SuppressInitialValue = true,
-                LabelNames = new[] { "operation" }
-            });
-
-        private ICollector<IObserver> CreateHttpRequestDurationMetric()
-            => _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
-             new SummaryConfiguration
-             {
-                 SuppressInitialValue = true,
-                 LabelNames = new[] { "operation", "status_code" },
-                 Objectives = new[]
-                {
-                    new QuantileEpsilonPair(0.5, 0.05),
-                    new QuantileEpsilonPair(0.9, 0.05),
-                    new QuantileEpsilonPair(0.95, 0.01),
-                    new QuantileEpsilonPair(0.99, 0.005),
-                }
-             });
-
         public void OnNext(KeyValuePair<string, object?> kvp)
         {
             switch (kvp.Key)
@@ -71,12 +42,28 @@ namespace O9d.Metrics.AspNet
                 case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Start":
                     OnHttpRequestStarted(kvp.Value as HttpContext);
                     break;
-                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
-                    OnHttpRequestCompleted(kvp.Value as HttpContext);
-                    break;
                 case "Microsoft.AspNetCore.Routing.EndpointMatched":
                     OnEndpointMatched(kvp.Value as HttpContext);
                     break;
+                // Ref https://github.com/dotnet/aspnetcore/blob/52eff90fbcfca39b7eb58baad597df6a99a542b0/src/Middleware/Diagnostics/test/UnitTests/TestDiagnosticListener.cs
+                case "Microsoft.AspNetCore.Diagnostics.UnhandledException":
+                    OnException(kvp);
+                    break;
+                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
+                    OnHttpRequestCompleted(kvp.Value as HttpContext);
+                    break;
+            }
+        }
+
+        private void OnException(KeyValuePair<string, object?> kvp)
+        {
+            if (kvp.Value is not null 
+                && _exceptionFetcher.TryFetch(kvp.Value, out Exception? ex)
+                && ex is SliException sliEx
+                && _exceptionContextFetcher.TryFetch(kvp.Value, out HttpContext? httpContext)
+            )
+            {
+                httpContext?.SetSliError(sliEx.ErrorType, sliEx.Dependency);
             }
         }
 
@@ -155,6 +142,37 @@ namespace O9d.Metrics.AspNet
         public void OnError(Exception error)
         {
         }
+
+        private ICollector<ICounter> CreateHttpErrorsTotalMetric()
+            => _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
+            new CounterConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
+            });
+
+        private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
+            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
+            new GaugeConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation" }
+            });
+
+        private ICollector<IObserver> CreateHttpRequestDurationMetric()
+            => _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
+             new SummaryConfiguration
+             {
+                 SuppressInitialValue = true,
+                 LabelNames = new[] { "operation", "status_code" },
+                 Objectives = new[]
+                {
+                    new QuantileEpsilonPair(0.5, 0.05),
+                    new QuantileEpsilonPair(0.9, 0.05),
+                    new QuantileEpsilonPair(0.95, 0.01),
+                    new QuantileEpsilonPair(0.99, 0.005),
+                }
+             });
 
         private static string? GetOperation(HttpContext httpContext)
         {

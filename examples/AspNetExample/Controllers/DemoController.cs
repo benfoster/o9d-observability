@@ -36,5 +36,12 @@ namespace examples.AspNetExample.Controllers
         {
             throw new HttpRequestException("Invalid request");
         }
+
+        // http GET https://localhost:5001/demo/sliex --verify no -v
+        [HttpGet("sliex", Name = "get_sliex")]
+        public IActionResult SliException()
+        {
+            throw new SliException(ErrorType.ExternalDependency, "sliex_dependency");
+        }
     }
 }
