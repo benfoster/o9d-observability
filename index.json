@@ -12,7 +12,12 @@
   "api/O9d.Metrics.AspNet.html": {
     "href": "api/O9d.Metrics.AspNet.html",
     "title": "Namespace O9d.Metrics.AspNet | Observability Documentation",
-    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions MetricsHttpContextExtensions"
+    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions MetricsHttpContextExtensions Interfaces IMetrics"
+  },
+  "api/O9d.Metrics.AspNet.IMetrics.html": {
+    "href": "api/O9d.Metrics.AspNet.IMetrics.html",
+    "title": "Interface IMetrics | Observability Documentation",
+    "keywords": "Interface IMetrics Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public interface IMetrics Methods | Improve this Doc View Source CreateCounter(String, String, Nullable<CounterConfiguration>) Declaration ICollector<ICounter> CreateCounter(string name, string help, CounterConfiguration? configuration = null) Parameters Type Name Description String name String help Nullable < CounterConfiguration > configuration Returns Type Description ICollector < ICounter > | Improve this Doc View Source CreateGauge(String, String, Nullable<GaugeConfiguration>) Declaration ICollector<IGauge> CreateGauge(string name, string help, GaugeConfiguration? configuration = null) Parameters Type Name Description String name String help Nullable < GaugeConfiguration > configuration Returns Type Description ICollector < IGauge > | Improve this Doc View Source CreateHistogram(String, String, Nullable<HistogramConfiguration>) Declaration ICollector<IHistogram> CreateHistogram(string name, string help, HistogramConfiguration? configuration = null) Parameters Type Name Description String name String help Nullable < HistogramConfiguration > configuration Returns Type Description ICollector < IHistogram > | Improve this Doc View Source CreateSummary(String, String, Nullable<SummaryConfiguration>) Declaration ICollector<ISummary> CreateSummary(string name, string help, SummaryConfiguration? configuration = null) Parameters Type Name Description String name String help Nullable < SummaryConfiguration > configuration Returns Type Description ICollector < ISummary >"
   },
   "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html": {
     "href": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",
@@ -37,12 +42,17 @@
   "api/O9d.Observability.ErrorType.html": {
     "href": "api/O9d.Observability.ErrorType.html",
     "title": "Enum ErrorType | Observability Documentation",
-    "keywords": "Enum ErrorType Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public enum ErrorType : int Fields Name Description ExternalDependency Internal InternalDependency InvalidRequest"
+    "keywords": "Enum ErrorType Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public enum ErrorType : int Fields Name Description ExternalDependency Internal InternalDependency InvalidRequest Extension Methods ErrorTypeExtensions.GetStringValue()"
+  },
+  "api/O9d.Observability.ErrorTypeExtensions.html": {
+    "href": "api/O9d.Observability.ErrorTypeExtensions.html",
+    "title": "Class ErrorTypeExtensions | Observability Documentation",
+    "keywords": "Class ErrorTypeExtensions Inheritance Object ErrorTypeExtensions Namespace : O9d.Observability Assembly : O9d.Observability.dll Syntax public static class ErrorTypeExtensions : object Methods | Improve this Doc View Source GetStringValue(ErrorType) Returns the string value representation of the error type for outputting to external tools Declaration public static string GetStringValue(this ErrorType errorType) Parameters Type Name Description ErrorType errorType The type of error Returns Type Description String"
   },
   "api/O9d.Observability.html": {
     "href": "api/O9d.Observability.html",
     "title": "Namespace O9d.Observability | Observability Documentation",
-    "keywords": "Namespace O9d.Observability Classes DiagnosticObservabilityBuilderExtensions ObservabilityServiceCollectionExtensions Extensions for Interfaces IInstrumentation Defines an instrumentation component that can be initialized by the Observability Host. IObservabilityBuilder Extensibility point for adding observability components. Enums ErrorType"
+    "keywords": "Namespace O9d.Observability Classes DiagnosticObservabilityBuilderExtensions ErrorTypeExtensions ObservabilityServiceCollectionExtensions Extensions for Interfaces IInstrumentation Defines an instrumentation component that can be initialized by the Observability Host. IObservabilityBuilder Extensibility point for adding observability components. Enums ErrorType"
   },
   "api/O9d.Observability.IInstrumentation.html": {
     "href": "api/O9d.Observability.IInstrumentation.html",

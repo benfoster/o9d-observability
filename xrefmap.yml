@@ -61,6 +61,76 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
   nameWithType: AspNetMetricsOptions.ShouldInstrument
+- uid: O9d.Metrics.AspNet.IMetrics
+  name: IMetrics
+  href: api/O9d.Metrics.AspNet.IMetrics.html
+  commentId: T:O9d.Metrics.AspNet.IMetrics
+  fullName: O9d.Metrics.AspNet.IMetrics
+  nameWithType: IMetrics
+- uid: O9d.Metrics.AspNet.IMetrics.CreateCounter(System.String,System.String,System.Nullable{CounterConfiguration})
+  name: CreateCounter(String, String, Nullable<CounterConfiguration>)
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateCounter_System_String_System_String_System_Nullable_CounterConfiguration__
+  commentId: M:O9d.Metrics.AspNet.IMetrics.CreateCounter(System.String,System.String,System.Nullable{CounterConfiguration})
+  name.vb: CreateCounter(String, String, Nullable(Of CounterConfiguration))
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateCounter(System.String, System.String, System.Nullable<CounterConfiguration>)
+  fullName.vb: O9d.Metrics.AspNet.IMetrics.CreateCounter(System.String, System.String, System.Nullable(Of CounterConfiguration))
+  nameWithType: IMetrics.CreateCounter(String, String, Nullable<CounterConfiguration>)
+  nameWithType.vb: IMetrics.CreateCounter(String, String, Nullable(Of CounterConfiguration))
+- uid: O9d.Metrics.AspNet.IMetrics.CreateCounter*
+  name: CreateCounter
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateCounter_
+  commentId: Overload:O9d.Metrics.AspNet.IMetrics.CreateCounter
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateCounter
+  nameWithType: IMetrics.CreateCounter
+- uid: O9d.Metrics.AspNet.IMetrics.CreateGauge(System.String,System.String,System.Nullable{GaugeConfiguration})
+  name: CreateGauge(String, String, Nullable<GaugeConfiguration>)
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateGauge_System_String_System_String_System_Nullable_GaugeConfiguration__
+  commentId: M:O9d.Metrics.AspNet.IMetrics.CreateGauge(System.String,System.String,System.Nullable{GaugeConfiguration})
+  name.vb: CreateGauge(String, String, Nullable(Of GaugeConfiguration))
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateGauge(System.String, System.String, System.Nullable<GaugeConfiguration>)
+  fullName.vb: O9d.Metrics.AspNet.IMetrics.CreateGauge(System.String, System.String, System.Nullable(Of GaugeConfiguration))
+  nameWithType: IMetrics.CreateGauge(String, String, Nullable<GaugeConfiguration>)
+  nameWithType.vb: IMetrics.CreateGauge(String, String, Nullable(Of GaugeConfiguration))
+- uid: O9d.Metrics.AspNet.IMetrics.CreateGauge*
+  name: CreateGauge
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateGauge_
+  commentId: Overload:O9d.Metrics.AspNet.IMetrics.CreateGauge
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateGauge
+  nameWithType: IMetrics.CreateGauge
+- uid: O9d.Metrics.AspNet.IMetrics.CreateHistogram(System.String,System.String,System.Nullable{HistogramConfiguration})
+  name: CreateHistogram(String, String, Nullable<HistogramConfiguration>)
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateHistogram_System_String_System_String_System_Nullable_HistogramConfiguration__
+  commentId: M:O9d.Metrics.AspNet.IMetrics.CreateHistogram(System.String,System.String,System.Nullable{HistogramConfiguration})
+  name.vb: CreateHistogram(String, String, Nullable(Of HistogramConfiguration))
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateHistogram(System.String, System.String, System.Nullable<HistogramConfiguration>)
+  fullName.vb: O9d.Metrics.AspNet.IMetrics.CreateHistogram(System.String, System.String, System.Nullable(Of HistogramConfiguration))
+  nameWithType: IMetrics.CreateHistogram(String, String, Nullable<HistogramConfiguration>)
+  nameWithType.vb: IMetrics.CreateHistogram(String, String, Nullable(Of HistogramConfiguration))
+- uid: O9d.Metrics.AspNet.IMetrics.CreateHistogram*
+  name: CreateHistogram
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateHistogram_
+  commentId: Overload:O9d.Metrics.AspNet.IMetrics.CreateHistogram
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateHistogram
+  nameWithType: IMetrics.CreateHistogram
+- uid: O9d.Metrics.AspNet.IMetrics.CreateSummary(System.String,System.String,System.Nullable{SummaryConfiguration})
+  name: CreateSummary(String, String, Nullable<SummaryConfiguration>)
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateSummary_System_String_System_String_System_Nullable_SummaryConfiguration__
+  commentId: M:O9d.Metrics.AspNet.IMetrics.CreateSummary(System.String,System.String,System.Nullable{SummaryConfiguration})
+  name.vb: CreateSummary(String, String, Nullable(Of SummaryConfiguration))
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateSummary(System.String, System.String, System.Nullable<SummaryConfiguration>)
+  fullName.vb: O9d.Metrics.AspNet.IMetrics.CreateSummary(System.String, System.String, System.Nullable(Of SummaryConfiguration))
+  nameWithType: IMetrics.CreateSummary(String, String, Nullable<SummaryConfiguration>)
+  nameWithType.vb: IMetrics.CreateSummary(String, String, Nullable(Of SummaryConfiguration))
+- uid: O9d.Metrics.AspNet.IMetrics.CreateSummary*
+  name: CreateSummary
+  href: api/O9d.Metrics.AspNet.IMetrics.html#O9d_Metrics_AspNet_IMetrics_CreateSummary_
+  commentId: Overload:O9d.Metrics.AspNet.IMetrics.CreateSummary
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.IMetrics.CreateSummary
+  nameWithType: IMetrics.CreateSummary
 - uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions
   name: MetricsHttpContextExtensions
   href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html
@@ -323,6 +393,25 @@ references:
   commentId: F:O9d.Observability.ErrorType.InvalidRequest
   fullName: O9d.Observability.ErrorType.InvalidRequest
   nameWithType: ErrorType.InvalidRequest
+- uid: O9d.Observability.ErrorTypeExtensions
+  name: ErrorTypeExtensions
+  href: api/O9d.Observability.ErrorTypeExtensions.html
+  commentId: T:O9d.Observability.ErrorTypeExtensions
+  fullName: O9d.Observability.ErrorTypeExtensions
+  nameWithType: ErrorTypeExtensions
+- uid: O9d.Observability.ErrorTypeExtensions.GetStringValue(O9d.Observability.ErrorType)
+  name: GetStringValue(ErrorType)
+  href: api/O9d.Observability.ErrorTypeExtensions.html#O9d_Observability_ErrorTypeExtensions_GetStringValue_O9d_Observability_ErrorType_
+  commentId: M:O9d.Observability.ErrorTypeExtensions.GetStringValue(O9d.Observability.ErrorType)
+  fullName: O9d.Observability.ErrorTypeExtensions.GetStringValue(O9d.Observability.ErrorType)
+  nameWithType: ErrorTypeExtensions.GetStringValue(ErrorType)
+- uid: O9d.Observability.ErrorTypeExtensions.GetStringValue*
+  name: GetStringValue
+  href: api/O9d.Observability.ErrorTypeExtensions.html#O9d_Observability_ErrorTypeExtensions_GetStringValue_
+  commentId: Overload:O9d.Observability.ErrorTypeExtensions.GetStringValue
+  isSpec: "True"
+  fullName: O9d.Observability.ErrorTypeExtensions.GetStringValue
+  nameWithType: ErrorTypeExtensions.GetStringValue
 - uid: O9d.Observability.IInstrumentation
   name: IInstrumentation
   href: api/O9d.Observability.IInstrumentation.html
