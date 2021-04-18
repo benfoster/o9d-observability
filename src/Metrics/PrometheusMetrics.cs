@@ -1,8 +1,8 @@
 using Prometheus;
 
-namespace O9d.Metrics.AspNet
+namespace O9d.Metrics
 {
-    internal class PrometheusMetrics : IMetrics
+    public class PrometheusMetrics : IMetrics
     {
         private readonly IMetricFactory _factory 
             = Prometheus.Metrics.WithCustomRegistry(Prometheus.Metrics.DefaultRegistry);

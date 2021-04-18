@@ -16,5 +16,6 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Observability\Observability.csproj"/>
+      <ProjectReference Include="..\Metrics\Metrics.csproj"/>
     </ItemGroup>
   </Project>

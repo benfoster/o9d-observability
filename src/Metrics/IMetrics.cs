@@ -1,6 +1,6 @@
 using Prometheus;
 
-namespace O9d.Metrics.AspNet
+namespace O9d.Metrics
 {
     public interface IMetrics
     {

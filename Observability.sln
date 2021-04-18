@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observability.Hosting.AspNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observability.Hosting.AspNet.Tests", "test\Observability.Hosting.AspNet.Tests\Observability.Hosting.AspNet.Tests.csproj", "{FC4C5702-F107-4D6D-BEE9-8A8F8F982EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metris.AspNet.Tests", "test\Metris.AspNet.Tests\Metris.AspNet.Tests.csproj", "{E2B610D3-908B-449A-9DBB-531787FF2F69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics.AspNet.Tests", "test\Metrics.AspNet.Tests\Metrics.AspNet.Tests.csproj", "{E2B610D3-908B-449A-9DBB-531787FF2F69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
