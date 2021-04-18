@@ -9,10 +9,15 @@
     "title": "Class AspNetMetricsOptions | Observability Documentation",
     "keywords": "Class AspNetMetricsOptions Inheritance Object AspNetMetricsOptions Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public class AspNetMetricsOptions : object Constructors | Improve this Doc View Source AspNetMetricsOptions() Declaration public AspNetMetricsOptions() Properties | Improve this Doc View Source ShouldInstrument Gets or sets the criteria for whether the path should be instrumented Declaration public Func<PathString, bool> ShouldInstrument { get; set; } Property Value Type Description Func < PathString , Boolean >"
   },
+  "api/O9d.Metrics.AspNet.AspNetObserver.html": {
+    "href": "api/O9d.Metrics.AspNet.AspNetObserver.html",
+    "title": "Class AspNetObserver | Observability Documentation",
+    "keywords": "Class AspNetObserver Inheritance Object AspNetObserver Namespace : O9d.Metrics.AspNet Assembly : O9d.Metrics.AspNet.dll Syntax public abstract class AspNetObserver : IObserver<KeyValuePair<string, object?>> Methods | Improve this Doc View Source OnEndpointMatched(HttpContext) Declaration public virtual void OnEndpointMatched(HttpContext httpContext) Parameters Type Name Description HttpContext httpContext | Improve this Doc View Source OnHttpRequestCompleted(HttpContext) Declaration public virtual void OnHttpRequestCompleted(HttpContext httpContext) Parameters Type Name Description HttpContext httpContext | Improve this Doc View Source OnHttpRequestStarted(HttpContext) Declaration public virtual void OnHttpRequestStarted(HttpContext httpContext) Parameters Type Name Description HttpContext httpContext | Improve this Doc View Source OnUnhandledException(HttpContext, Exception) Declaration public virtual void OnUnhandledException(HttpContext httpContext, Exception exception) Parameters Type Name Description HttpContext httpContext Exception exception"
+  },
   "api/O9d.Metrics.AspNet.html": {
     "href": "api/O9d.Metrics.AspNet.html",
     "title": "Namespace O9d.Metrics.AspNet | Observability Documentation",
-    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions MetricsHttpContextExtensions"
+    "keywords": "Namespace O9d.Metrics.AspNet Classes AspNetMetricsObservabilityBuilderExtensions AspNetMetricsOptions AspNetObserver MetricsHttpContextExtensions"
   },
   "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html": {
     "href": "api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html",

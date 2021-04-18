@@ -67,6 +67,64 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
   nameWithType: AspNetMetricsOptions.ShouldInstrument
+- uid: O9d.Metrics.AspNet.AspNetObserver
+  name: AspNetObserver
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html
+  commentId: T:O9d.Metrics.AspNet.AspNetObserver
+  fullName: O9d.Metrics.AspNet.AspNetObserver
+  nameWithType: AspNetObserver
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched(HttpContext)
+  name: OnEndpointMatched(HttpContext)
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnEndpointMatched_HttpContext_
+  commentId: M:O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched(HttpContext)
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched(HttpContext)
+  nameWithType: AspNetObserver.OnEndpointMatched(HttpContext)
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched*
+  name: OnEndpointMatched
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnEndpointMatched_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnEndpointMatched
+  nameWithType: AspNetObserver.OnEndpointMatched
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted(HttpContext)
+  name: OnHttpRequestCompleted(HttpContext)
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnHttpRequestCompleted_HttpContext_
+  commentId: M:O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted(HttpContext)
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted(HttpContext)
+  nameWithType: AspNetObserver.OnHttpRequestCompleted(HttpContext)
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted*
+  name: OnHttpRequestCompleted
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnHttpRequestCompleted_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestCompleted
+  nameWithType: AspNetObserver.OnHttpRequestCompleted
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted(HttpContext)
+  name: OnHttpRequestStarted(HttpContext)
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnHttpRequestStarted_HttpContext_
+  commentId: M:O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted(HttpContext)
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted(HttpContext)
+  nameWithType: AspNetObserver.OnHttpRequestStarted(HttpContext)
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted*
+  name: OnHttpRequestStarted
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnHttpRequestStarted_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnHttpRequestStarted
+  nameWithType: AspNetObserver.OnHttpRequestStarted
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException(HttpContext,Exception)
+  name: OnUnhandledException(HttpContext, Exception)
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnUnhandledException_HttpContext_Exception_
+  commentId: M:O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException(HttpContext,Exception)
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException(HttpContext, Exception)
+  nameWithType: AspNetObserver.OnUnhandledException(HttpContext, Exception)
+- uid: O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException*
+  name: OnUnhandledException
+  href: api/O9d.Metrics.AspNet.AspNetObserver.html#O9d_Metrics_AspNet_AspNetObserver_OnUnhandledException_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetObserver.OnUnhandledException
+  nameWithType: AspNetObserver.OnUnhandledException
 - uid: O9d.Metrics.AspNet.MetricsHttpContextExtensions
   name: MetricsHttpContextExtensions
   href: api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.html

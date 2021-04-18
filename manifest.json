@@ -61,6 +61,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.AspNet.AspNetObserver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.AspNet.AspNetObserver.html",
+          "hash": "Lckzl76rXQ5bK5LVhwfOyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.yml",
       "output": {
         ".html": {
@@ -77,7 +89,7 @@
       "output": {
         ".html": {
           "relative_path": "api/O9d.Metrics.AspNet.html",
-          "hash": "BmkXB5hmroTZ3KrSF4GviA=="
+          "hash": "ynGX6+WkdqZ8tHmAfc/dlg=="
         }
       },
       "is_incremental": false,
@@ -257,7 +269,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2+kjAb4gPAvKqOwot9aBdQ=="
+          "hash": "3+Afz8V6lehebPc3/xIxng=="
         }
       },
       "is_incremental": false,
@@ -296,7 +308,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 19,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
