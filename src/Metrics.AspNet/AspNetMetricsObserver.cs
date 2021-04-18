@@ -1,23 +1,19 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Routing;
-using Prometheus;
 using O9d.Observability;
-using Microsoft.AspNetCore.Mvc;
+using Prometheus;
 
 namespace O9d.Metrics.AspNet
 {
-    internal class AspNetMetricsObserver : IObserver<KeyValuePair<string, object?>>
+    internal class AspNetMetricsObserver : AspNetObserver
     {
         private readonly AspNetMetricsOptions _options;
         private readonly IMetrics _metrics;
         private readonly ICollector<ICounter> _httpErrorsTotalMetric;
         private readonly ICollector<IGauge> _httpRequestsInProgressMetric;
         private readonly ICollector<IObserver> _httpRequestDurationMetric;
-        private readonly PropertyFetcher<Exception> _exceptionFetcher = new("exception");
-        private readonly PropertyFetcher<HttpContext> _exceptionContextFetcher = new("httpContext");
 
         public AspNetMetricsObserver(AspNetMetricsOptions options)
             : this(options, new PrometheusMetrics())
@@ -35,42 +31,8 @@ namespace O9d.Metrics.AspNet
             _httpRequestDurationMetric = CreateHttpRequestDurationMetric();
         }
 
-        public void OnNext(KeyValuePair<string, object?> kvp)
+        public override void OnHttpRequestStarted(HttpContext httpContext)
         {
-            switch (kvp.Key)
-            {
-                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Start":
-                    OnHttpRequestStarted(kvp.Value as HttpContext);
-                    break;
-                case "Microsoft.AspNetCore.Routing.EndpointMatched":
-                    OnEndpointMatched(kvp.Value as HttpContext);
-                    break;
-                // Ref https://github.com/dotnet/aspnetcore/blob/52eff90fbcfca39b7eb58baad597df6a99a542b0/src/Middleware/Diagnostics/test/UnitTests/TestDiagnosticListener.cs
-                case "Microsoft.AspNetCore.Diagnostics.UnhandledException":
-                    OnException(kvp);
-                    break;
-                case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
-                    OnHttpRequestCompleted(kvp.Value as HttpContext);
-                    break;
-            }
-        }
-
-        private void OnException(KeyValuePair<string, object?> kvp)
-        {
-            if (kvp.Value is not null 
-                && _exceptionFetcher.TryFetch(kvp.Value, out Exception? ex)
-                && ex is SliException sliEx
-                && _exceptionContextFetcher.TryFetch(kvp.Value, out HttpContext? httpContext)
-            )
-            {
-                httpContext?.SetSliError(sliEx.ErrorType, sliEx.Dependency);
-            }
-        }
-
-        protected virtual void OnHttpRequestStarted(HttpContext? httpContext)
-        {
-            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
-
             if (!_options.ShouldInstrument(httpContext.Request.Path))
             {
                 return;
@@ -79,10 +41,8 @@ namespace O9d.Metrics.AspNet
             httpContext.SetRequestTimestamp();
         }
 
-        protected virtual void OnEndpointMatched(HttpContext? httpContext)
+        public override void OnEndpointMatched(HttpContext httpContext)
         {
-            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
-
             if (!_options.ShouldInstrument(httpContext.Request.Path))
             {
                 return;
@@ -102,10 +62,16 @@ namespace O9d.Metrics.AspNet
                 .Inc();
         }
 
-        protected virtual void OnHttpRequestCompleted(HttpContext? httpContext)
+        public override void OnUnhandledException(HttpContext httpContext, Exception exception)
         {
-            if (httpContext is null) throw new ArgumentNullException(nameof(httpContext));
+            if (exception is SliException sliException)
+            {
+                httpContext.SetSliError(sliException.ErrorType, sliException.Dependency);
+            }
+        }
 
+        public override void OnHttpRequestCompleted(HttpContext httpContext)
+        {
             if (!_options.ShouldInstrument(httpContext.Request.Path))
             {
                 return;
@@ -124,7 +90,7 @@ namespace O9d.Metrics.AspNet
                 .Observe(httpContext.GetRequestDuration().TotalSeconds);
 
             if (HasError(httpContext, out (ErrorType Type, string? Dependency)? error))
-            {                
+            {
                 _httpErrorsTotalMetric
                     .WithLabels(operation, error!.Value.Type.GetStringValue(), error!.Value.Dependency ?? string.Empty)
                     .Inc();
@@ -133,14 +99,6 @@ namespace O9d.Metrics.AspNet
             _httpRequestsInProgressMetric
                 .WithLabels(operation)
                 .Dec();
-        }
-
-        public void OnCompleted()
-        {
-        }
-
-        public void OnError(Exception error)
-        {
         }
 
         private ICollector<ICounter> CreateHttpErrorsTotalMetric()
@@ -152,7 +110,7 @@ namespace O9d.Metrics.AspNet
             });
 
         private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
-            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", 
+            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application",
             new GaugeConfiguration
             {
                 SuppressInitialValue = true,
@@ -182,7 +140,7 @@ namespace O9d.Metrics.AspNet
             {
                 return operation;
             }
-            
+
             // TODO should we just move the below into the above extension?
             Endpoint? endpoint = httpContext.GetEndpoint();
 
@@ -194,7 +152,7 @@ namespace O9d.Metrics.AspNet
         private static bool HasError(HttpContext httpContext, out (ErrorType, string?)? error)
         {
             error = default;
-            
+
             if (httpContext.HasError(out var httpError))
             {
                 error = httpError;
@@ -208,7 +166,7 @@ namespace O9d.Metrics.AspNet
                     break;
                 case int s when s >= 500:
                     error = (ErrorType.Internal, default);
-                    break;                    
+                    break;
             }
 
             return error.HasValue;

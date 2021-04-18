@@ -23,8 +23,7 @@ namespace O9d.Metrics.AspNet.Tests
         public void Request_timestamp_is_set_on_request_start()
         {
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Start", _httpContext));
-
+            observer.OnHttpRequestStarted(_httpContext);
             _httpContext.GetRequestDuration().ShouldNotBe(TimeSpan.Zero);
         }
 
@@ -35,8 +34,8 @@ namespace O9d.Metrics.AspNet.Tests
             _httpContext.SetOperation("error-op");
 
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+            observer.OnHttpRequestStarted(_httpContext);
+            observer.OnHttpRequestCompleted(_httpContext);
 
             var metric = _metrics.GetMetric<ICounter>("http_server_errors_total");
             metric.ShouldNotBeNull();
@@ -48,13 +47,7 @@ namespace O9d.Metrics.AspNet.Tests
         public void Sli_exceptions_set_sli_error()
         {
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
-            
-            var @event = new {
-                httpContext = _httpContext,
-                exception = new SliException(ErrorType.InternalDependency, "dep")
-            };
-            
-            observer.OnNext(new("Microsoft.AspNetCore.Diagnostics.UnhandledException", @event));
+            observer.OnUnhandledException(_httpContext, new SliException(ErrorType.InternalDependency, "dep"));
 
             _httpContext.HasError(out var error).ShouldBeTrue();
             error.ShouldNotBeNull();
@@ -68,10 +61,10 @@ namespace O9d.Metrics.AspNet.Tests
             _httpContext.SetOperation("op");
 
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.EndpointMatched", _httpContext));
+            observer.OnHttpRequestStarted(_httpContext);
+            observer.OnEndpointMatched(_httpContext);
             _httpContext.Response.StatusCode = 422;
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+            observer.OnHttpRequestCompleted(_httpContext);
 
             var metric = _metrics.GetMetric<ICounter>("http_server_errors_total");
             metric.ShouldNotBeNull();
@@ -85,10 +78,10 @@ namespace O9d.Metrics.AspNet.Tests
             _httpContext.SetOperation("op");
 
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.EndpointMatched", _httpContext));
+            observer.OnHttpRequestStarted(_httpContext);
+            observer.OnEndpointMatched(_httpContext);
             _httpContext.Response.StatusCode = 504;
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+            observer.OnHttpRequestCompleted(_httpContext);
 
             var metric = _metrics.GetMetric<ICounter>("http_server_errors_total");
             metric.ShouldNotBeNull();
@@ -103,9 +96,9 @@ namespace O9d.Metrics.AspNet.Tests
 
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), _metrics);
 
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
+            observer.OnHttpRequestStarted(_httpContext);
 
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.EndpointMatched", _httpContext));
+            observer.OnEndpointMatched(_httpContext);
 
             var metric = _metrics.GetMetric<IGauge>("http_server_requests_in_progress");
             metric.ShouldNotBeNull();
@@ -113,7 +106,7 @@ namespace O9d.Metrics.AspNet.Tests
             metric.Child.Verify(x => x.Inc(1), Times.Once);
         
             _httpContext.Response.StatusCode = 200;
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+            observer.OnHttpRequestCompleted(_httpContext);
         }
 
         [Fact]
@@ -122,10 +115,10 @@ namespace O9d.Metrics.AspNet.Tests
             _httpContext.SetOperation("op");
 
             var observer = new AspNetMetricsObserver(new AspNetMetricsOptions(), new PrometheusMetrics());
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.HttpRequestIn.Start", _httpContext));
-            observer.OnNext(new("Microsoft.AspNetCore.Routing.EndpointMatched", _httpContext));
+            observer.OnHttpRequestStarted(_httpContext);
+            observer.OnEndpointMatched(_httpContext);
             _httpContext.Response.StatusCode = 200;
-            observer.OnNext(new("Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop", _httpContext));
+            observer.OnHttpRequestCompleted(_httpContext);
         }
     }
 }
