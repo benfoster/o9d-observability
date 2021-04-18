@@ -26,25 +26,25 @@ namespace O9d.Metrics.AspNet
         {
         }
 
-        void IObserver<KeyValuePair<string, object?>>.OnNext(KeyValuePair<string, object?> kvp)
+        void IObserver<KeyValuePair<string, object?>>.OnNext(KeyValuePair<string, object?> value)
         {
-            if (kvp.Value is null)
+            if (value.Value is null)
                 return; // log?
             
-            switch (kvp.Key)
+            switch (value.Key)
             {
                 case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Start":
-                    OnHttpRequestStarted((HttpContext)kvp.Value);
+                    OnHttpRequestStarted((HttpContext)value.Value);
                     break;
                 case "Microsoft.AspNetCore.Routing.EndpointMatched":
-                    OnEndpointMatched((HttpContext)kvp.Value);
+                    OnEndpointMatched((HttpContext)value.Value);
                     break;
                 // Ref https://github.com/dotnet/aspnetcore/blob/52eff90fbcfca39b7eb58baad597df6a99a542b0/src/Middleware/Diagnostics/test/UnitTests/TestDiagnosticListener.cs
                 case "Microsoft.AspNetCore.Diagnostics.UnhandledException":
-                    ProcessException(kvp);
+                    ProcessException(value);
                     break;
                 case "Microsoft.AspNetCore.Hosting.HttpRequestIn.Stop":
-                    OnHttpRequestCompleted((HttpContext)kvp.Value);
+                    OnHttpRequestCompleted((HttpContext)value.Value);
                     break;
             }
         }
