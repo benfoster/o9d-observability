@@ -61,18 +61,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/O9d.Metrics.AspNet.IMetrics.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/O9d.Metrics.AspNet.IMetrics.html",
-          "hash": "PAaFgB3Bd/8A2HRkjhA0+w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/api/O9d.Metrics.AspNet.MetricsHttpContextExtensions.yml",
       "output": {
         ".html": {
@@ -89,7 +77,43 @@
       "output": {
         ".html": {
           "relative_path": "api/O9d.Metrics.AspNet.html",
-          "hash": "OUSHqpzKXKk6uapfZi4bsQ=="
+          "hash": "BmkXB5hmroTZ3KrSF4GviA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.IMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.IMetrics.html",
+          "hash": "NkmAkuKE1vQCVGe6uq923g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.PrometheusMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.PrometheusMetrics.html",
+          "hash": "1P8mPKKXH7HGVt/sai8knA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/O9d.Metrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/O9d.Metrics.html",
+          "hash": "+GKWRAEzfBUz3ulz34CBYA=="
         }
       },
       "is_incremental": false,
@@ -233,7 +257,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "cjkh5MhbmXv8q8c90nb/bw=="
+          "hash": "2+kjAb4gPAvKqOwot9aBdQ=="
         }
       },
       "is_incremental": false,
@@ -245,7 +269,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "DIVAmFocr8iRqtr/mgklow=="
+          "hash": "bHQK71RSppuXQQUF+gnsQA=="
         }
       },
       "is_incremental": false,
@@ -272,7 +296,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 16,
+          "total_file_count": 18,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
