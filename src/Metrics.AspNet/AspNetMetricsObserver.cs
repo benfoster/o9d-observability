@@ -26,9 +26,14 @@ namespace O9d.Metrics.AspNet
             _metrics = metrics ?? throw new ArgumentNullException(nameof(metrics));
 
             // Support overrides here
-            _httpErrorsTotalMetric = CreateHttpErrorsTotalMetric();
-            _httpRequestsInProgressMetric = CreateHttpRequestsInProgressMetric();
-            _httpRequestDurationMetric = CreateHttpRequestDurationMetric();
+            _httpErrorsTotalMetric = CreateErrorTotalCounter();
+            _httpRequestsInProgressMetric = CreateRequestsInProgressGauge();
+
+            _httpRequestDurationMetric = options.RequestDurationMetricType switch
+            {
+                ObserverMetricType.Summary => CreateHttpRequestDurationSummary(),
+                _ => CreateHttpRequestDurationHistogram()
+            };
         }
 
         public override void OnHttpRequestStarted(HttpContext httpContext)
@@ -101,36 +106,61 @@ namespace O9d.Metrics.AspNet
                 .Dec();
         }
 
-        private ICollector<ICounter> CreateHttpErrorsTotalMetric()
-            => _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
-            new CounterConfiguration
+        protected virtual ICollector<ICounter> CreateErrorTotalCounter()
+        {            
+            var configuration = new CounterConfiguration
             {
                 SuppressInitialValue = true,
                 LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
-            });
+            };
 
-        private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
-            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application",
-            new GaugeConfiguration
+            _options.ConfigureErrorTotalCounter?.Invoke(configuration);
+            return _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error", configuration);
+        }
+
+        protected virtual ICollector<IGauge> CreateRequestsInProgressGauge()
+        {
+            var configuration = new GaugeConfiguration
             {
                 SuppressInitialValue = true,
                 LabelNames = new[] { "operation" }
-            });
+            };
 
-        private ICollector<IObserver> CreateHttpRequestDurationMetric()
-            => _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
-             new SummaryConfiguration
-             {
-                 SuppressInitialValue = true,
-                 LabelNames = new[] { "operation", "status_code" },
-                 Objectives = new[]
+            _options.ConfigureRequestsInProgressGauge?.Invoke(configuration);
+            return _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", configuration);
+        }
+
+        protected virtual ICollector<IObserver> CreateHttpRequestDurationSummary()
+        {
+            var configuration = new SummaryConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation", "status_code" },
+                Objectives = new[]
                 {
                     new QuantileEpsilonPair(0.5, 0.05),
                     new QuantileEpsilonPair(0.9, 0.05),
                     new QuantileEpsilonPair(0.95, 0.01),
                     new QuantileEpsilonPair(0.99, 0.005),
                 }
-             });
+            };
+
+            _options.ConfigureRequestDurationSummary?.Invoke(configuration);
+            return _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process", configuration);
+        }
+
+        protected virtual ICollector<IObserver> CreateHttpRequestDurationHistogram()
+        {
+            var configuration = new HistogramConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = new[] { "operation", "status_code" },
+                Buckets = new[] { 0.1, 0.2, 0.5, 1, 2 }
+            };
+
+            _options.ConfigureRequestDurationHistogram?.Invoke(configuration);
+            return _metrics.CreateHistogram("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process", configuration);
+        }
 
         private static string? GetOperation(HttpContext httpContext)
         {
