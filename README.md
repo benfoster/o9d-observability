@@ -168,6 +168,33 @@ What we can't track automatically are errors that are the result of internal or 
     throw new SliException(ErrorType.ExternalDependency, "skynet");
     ```
 
+#### Customizing Metrics
+
+The `AspNetMetricsOptions` class includes a number of options to customize the metrics created by the library. Each metric listed above has an associated `ConfigureX` property that can be used to customize the underlying Prometheus metric configuration. For example, to set the buckets used by the Request Duration Histogram metric:
+
+```c#
+services.AddObservability(builder =>
+    builder.AddAspNetMetrics(options =>
+        options.ConfigureRequestDurationHistogram = histogram =>
+        {
+            histogram.Buckets = new[] { 0.1, 0.2, 0.5, 0.75, 1, 2 };
+        }
+    )
+);
+```
+
+**Using a summary instead of a histogram to to track request duration**
+
+We recommend using histograms (the default) if you are running multiple instances of your application since they can be [aggregated](https://prometheus.io/docs/practices/histograms/). If you are happy with the trade-offs of using Summary metrics, you can switch the request duration metric type like so:
+
+```c#
+services.AddObservability(builder =>
+    builder.AddAspNetMetrics(options =>
+        options.RequestDurationMetricType = ObserverMetricType.Summary
+    )
+);
+```
+
 ## Extending O9d.Observability
 
 This project was heavily inspired by the [Open Telemetry Libraries for .NET](https://github.com/open-telemetry/opentelemetry-dotnet).

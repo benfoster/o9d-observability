@@ -147,7 +147,7 @@ namespace O9d.Metrics.AspNet
             return _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", configuration);
         }
 
-        private static string[] DefaultRequestDurationLabels = new[] { "operation", "status_code" };
+        private static readonly string[] DefaultRequestDurationLabels = new[] { "operation", "status_code" };
         protected virtual ICollector<IObserver> CreateHttpRequestDurationSummary()
         {
             var configuration = new SummaryConfiguration
