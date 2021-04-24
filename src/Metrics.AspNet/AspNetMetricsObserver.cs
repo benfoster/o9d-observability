@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Routing;
@@ -26,9 +27,14 @@ namespace O9d.Metrics.AspNet
             _metrics = metrics ?? throw new ArgumentNullException(nameof(metrics));
 
             // Support overrides here
-            _httpErrorsTotalMetric = CreateHttpErrorsTotalMetric();
-            _httpRequestsInProgressMetric = CreateHttpRequestsInProgressMetric();
-            _httpRequestDurationMetric = CreateHttpRequestDurationMetric();
+            _httpErrorsTotalMetric = CreateErrorTotalCounter();
+            _httpRequestsInProgressMetric = CreateRequestsInProgressGauge();
+
+            _httpRequestDurationMetric = options.RequestDurationMetricType switch
+            {
+                ObserverMetricType.Summary => CreateHttpRequestDurationSummary(),
+                _ => CreateHttpRequestDurationHistogram()
+            };
         }
 
         public override void OnHttpRequestStarted(HttpContext httpContext)
@@ -101,36 +107,90 @@ namespace O9d.Metrics.AspNet
                 .Dec();
         }
 
-        private ICollector<ICounter> CreateHttpErrorsTotalMetric()
-            => _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error",
-            new CounterConfiguration
+        protected virtual ICollector<ICounter> CreateErrorTotalCounter()
+        {            
+            string[] defaultLabels = new[] { "operation", "sli_error_type", "sli_dependency" };
+
+            var configuration = new CounterConfiguration
             {
                 SuppressInitialValue = true,
-                LabelNames = new[] { "operation", "sli_error_type", "sli_dependency" }
-            });
+                LabelNames = defaultLabels
+            };
 
-        private ICollector<IGauge> CreateHttpRequestsInProgressMetric()
-            => _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application",
-            new GaugeConfiguration
+            _options.ConfigureErrorTotalCounter?.Invoke(configuration);
+
+            if (configuration.LabelNames != defaultLabels)
+            {
+                throw new ArgumentException("The error total counter configuration is missing the required default labels");
+            }
+
+            return _metrics.CreateCounter("http_server_errors_total", "The number of HTTP requests resulting in an error", configuration);
+        }
+
+        protected virtual ICollector<IGauge> CreateRequestsInProgressGauge()
+        {
+            string[] defaultLabels = new[] { "operation" };
+            
+            var configuration = new GaugeConfiguration
             {
                 SuppressInitialValue = true,
-                LabelNames = new[] { "operation" }
-            });
+                LabelNames = defaultLabels
+            };
 
-        private ICollector<IObserver> CreateHttpRequestDurationMetric()
-            => _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process",
-             new SummaryConfiguration
-             {
-                 SuppressInitialValue = true,
-                 LabelNames = new[] { "operation", "status_code" },
-                 Objectives = new[]
+            _options.ConfigureRequestsInProgressGauge?.Invoke(configuration);
+
+            if (configuration.LabelNames != defaultLabels)
+            {
+                throw new ArgumentException("The requests in progress gauge configuration is missing the required default labels");
+            }
+
+            return _metrics.CreateGauge("http_server_requests_in_progress", "The number of HTTP requests currently being processed by the application", configuration);
+        }
+
+        private static readonly string[] DefaultRequestDurationLabels = new[] { "operation", "status_code" };
+        protected virtual ICollector<IObserver> CreateHttpRequestDurationSummary()
+        {
+            var configuration = new SummaryConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = DefaultRequestDurationLabels,
+                Objectives = new[]
                 {
                     new QuantileEpsilonPair(0.5, 0.05),
                     new QuantileEpsilonPair(0.9, 0.05),
                     new QuantileEpsilonPair(0.95, 0.01),
                     new QuantileEpsilonPair(0.99, 0.005),
                 }
-             });
+            };
+
+            _options.ConfigureRequestDurationSummary?.Invoke(configuration);
+
+            if (configuration.LabelNames != DefaultRequestDurationLabels)
+            {
+                throw new ArgumentException("The requests in progress summary configuration is missing the required default labels");
+            }
+
+            return _metrics.CreateSummary("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process", configuration);
+        }
+
+        protected virtual ICollector<IObserver> CreateHttpRequestDurationHistogram()
+        {
+            var configuration = new HistogramConfiguration
+            {
+                SuppressInitialValue = true,
+                LabelNames = DefaultRequestDurationLabels,
+                Buckets = new[] { 0.1, 0.2, 0.5, 1, 2 }
+            };
+
+            _options.ConfigureRequestDurationHistogram?.Invoke(configuration);
+
+            if (configuration.LabelNames != DefaultRequestDurationLabels)
+            {
+                throw new ArgumentException("The requests in progress histogram configuration is missing the required default labels");
+            }
+
+            return _metrics.CreateHistogram("http_server_request_duration_seconds", "The duration in seconds that HTTP requests take to process", configuration);
+        }
 
         private static string? GetOperation(HttpContext httpContext)
         {
