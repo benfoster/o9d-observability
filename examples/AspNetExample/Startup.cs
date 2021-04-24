@@ -29,7 +29,12 @@ namespace AspNetExample
             });
 
             services.AddObservability(builder =>
-                builder.AddAspNetMetrics()
+                builder.AddAspNetMetrics(options =>
+                    options.ConfigureRequestDurationHistogram = histogram =>
+                    {
+                        histogram.Buckets = new[] { 0.1, 0.2, 0.5, 0.75, 1, 2 };
+                    }
+                )
             );
 
             services.AddControllers();

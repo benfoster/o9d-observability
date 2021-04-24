@@ -69,7 +69,7 @@ namespace O9d.Metrics.AspNet.Tests
             var metric = _metrics.GetMetric<ICounter>("http_server_errors_total");
             metric.ShouldNotBeNull();
             metric.Collector.Verify(x => x.WithLabels("op", "invalid_request", String.Empty), Times.Once);
-            metric.Child.Verify(x => x.Inc(1), Times.Once);            
+            metric.Child.Verify(x => x.Inc(1), Times.Once);
         }
 
         [Fact]
@@ -86,7 +86,7 @@ namespace O9d.Metrics.AspNet.Tests
             var metric = _metrics.GetMetric<ICounter>("http_server_errors_total");
             metric.ShouldNotBeNull();
             metric.Collector.Verify(x => x.WithLabels("op", "internal", String.Empty), Times.Once);
-            metric.Child.Verify(x => x.Inc(1), Times.Once);            
+            metric.Child.Verify(x => x.Inc(1), Times.Once);
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace O9d.Metrics.AspNet.Tests
             metric.ShouldNotBeNull();
             metric.Collector.Verify(x => x.WithLabels("op"), Times.Once);
             metric.Child.Verify(x => x.Inc(1), Times.Once);
-        
+
             _httpContext.Response.StatusCode = 200;
             observer.OnHttpRequestCompleted(_httpContext);
         }
@@ -119,6 +119,120 @@ namespace O9d.Metrics.AspNet.Tests
             observer.OnEndpointMatched(_httpContext);
             _httpContext.Response.StatusCode = 200;
             observer.OnHttpRequestCompleted(_httpContext);
+        }
+
+        [Fact]
+        public void Can_configure_error_total_counter()
+        {
+            bool invoked = false;
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureErrorTotalCounter = config => invoked = true
+            };
+
+            _ = new AspNetMetricsObserver(options, _metrics);
+            invoked.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void Throws_if_missing_default_error_total_counter_labels()
+        {
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureErrorTotalCounter = config => config.LabelNames = new[] { "foo" }
+            };
+
+            Assert.Throws<ArgumentException>(() => new AspNetMetricsObserver(options, _metrics));
+        }
+
+        [Fact]
+        public void Can_configure_requests_in_progress_gauge()
+        {
+            bool invoked = false;
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestsInProgressGauge = config => invoked = true
+            };
+
+            _ = new AspNetMetricsObserver(options, _metrics);
+            invoked.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void Throws_if_missing_default_requests_in_progress_labels()
+        {
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestsInProgressGauge = config => config.LabelNames = new[] { "foo" }
+            };
+
+            Assert.Throws<ArgumentException>(() => new AspNetMetricsObserver(options, _metrics));
+        }
+
+        [Fact]
+        public void Uses_a_histogram_for_request_duration_by_default()
+        {
+            _ = new AspNetMetricsObserver(new(), _metrics);
+            _metrics.GetMetric<IHistogram>("http_server_request_duration_seconds").ShouldNotBeNull();
+            _metrics.GetMetric<ISummary>("http_server_request_duration_seconds").ShouldBeNull();
+        }
+
+        [Fact]
+        public void Can_use_summary_for_request_duration()
+        {
+            _ = new AspNetMetricsObserver(new() { RequestDurationMetricType = ObserverMetricType.Summary }, _metrics);
+            _metrics.GetMetric<IHistogram>("http_server_request_duration_seconds").ShouldBeNull();
+            _metrics.GetMetric<ISummary>("http_server_request_duration_seconds").ShouldNotBeNull();
+        }
+
+        [Fact]
+        public void Can_configure_request_duration_histogram()
+        {
+            bool invoked = false;
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestDurationHistogram = config => invoked = true
+            };
+
+            _ = new AspNetMetricsObserver(options, _metrics);
+            invoked.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void Throws_if_missing_request_duration_histogram_labels()
+        {
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestDurationHistogram = config => config.LabelNames = new[] { "foo" }
+            };
+
+            Assert.Throws<ArgumentException>(() => new AspNetMetricsObserver(options, _metrics));
+        }
+
+        [Fact]
+        public void Can_configure_request_duration_summary()
+        {
+            bool invoked = false;
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestDurationSummary = config => invoked = true,
+                RequestDurationMetricType = ObserverMetricType.Summary
+            };
+
+            _ = new AspNetMetricsObserver(options, _metrics);
+            invoked.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void Throws_if_missing_request_duration_summary_labels()
+        {
+            var options = new AspNetMetricsOptions
+            {
+                ConfigureRequestDurationSummary = config => config.LabelNames = new[] { "foo" },
+                RequestDurationMetricType = ObserverMetricType.Summary
+            };
+
+            Assert.Throws<ArgumentException>(() => new AspNetMetricsObserver(options, _metrics));
         }
     }
 }
