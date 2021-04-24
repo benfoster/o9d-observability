@@ -54,6 +54,84 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.AspNetMetricsOptions
   nameWithType: AspNetMetricsOptions.AspNetMetricsOptions
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter
+  name: ConfigureErrorTotalCounter
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureErrorTotalCounter
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter
+  nameWithType: AspNetMetricsOptions.ConfigureErrorTotalCounter
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter*
+  name: ConfigureErrorTotalCounter
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureErrorTotalCounter_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter
+  nameWithType: AspNetMetricsOptions.ConfigureErrorTotalCounter
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram
+  name: ConfigureRequestDurationHistogram
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationHistogram
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram
+  nameWithType: AspNetMetricsOptions.ConfigureRequestDurationHistogram
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram*
+  name: ConfigureRequestDurationHistogram
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationHistogram_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram
+  nameWithType: AspNetMetricsOptions.ConfigureRequestDurationHistogram
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary
+  name: ConfigureRequestDurationSummary
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationSummary
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary
+  nameWithType: AspNetMetricsOptions.ConfigureRequestDurationSummary
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary*
+  name: ConfigureRequestDurationSummary
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationSummary_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary
+  nameWithType: AspNetMetricsOptions.ConfigureRequestDurationSummary
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+  name: ConfigureRequestsInProgressGauge
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestsInProgressGauge
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+  nameWithType: AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge*
+  name: ConfigureRequestsInProgressGauge
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestsInProgressGauge_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+  nameWithType: AspNetMetricsOptions.ConfigureRequestsInProgressGauge
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels
+  name: ContextualLabels
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ContextualLabels
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels
+  nameWithType: AspNetMetricsOptions.ContextualLabels
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels*
+  name: ContextualLabels
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ContextualLabels_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels
+  nameWithType: AspNetMetricsOptions.ContextualLabels
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType
+  name: RequestDurationMetricType
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_RequestDurationMetricType
+  commentId: P:O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType
+  nameWithType: AspNetMetricsOptions.RequestDurationMetricType
+- uid: O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType*
+  name: RequestDurationMetricType
+  href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_RequestDurationMetricType_
+  commentId: Overload:O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType
+  isSpec: "True"
+  fullName: O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType
+  nameWithType: AspNetMetricsOptions.RequestDurationMetricType
 - uid: O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument
   name: ShouldInstrument
   href: api/O9d.Metrics.AspNet.AspNetMetricsOptions.html#O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument
@@ -163,6 +241,24 @@ references:
   isSpec: "True"
   fullName: O9d.Metrics.AspNet.MetricsHttpContextExtensions.SetSliError
   nameWithType: MetricsHttpContextExtensions.SetSliError
+- uid: O9d.Metrics.AspNet.ObserverMetricType
+  name: ObserverMetricType
+  href: api/O9d.Metrics.AspNet.ObserverMetricType.html
+  commentId: T:O9d.Metrics.AspNet.ObserverMetricType
+  fullName: O9d.Metrics.AspNet.ObserverMetricType
+  nameWithType: ObserverMetricType
+- uid: O9d.Metrics.AspNet.ObserverMetricType.Histogram
+  name: Histogram
+  href: api/O9d.Metrics.AspNet.ObserverMetricType.html#O9d_Metrics_AspNet_ObserverMetricType_Histogram
+  commentId: F:O9d.Metrics.AspNet.ObserverMetricType.Histogram
+  fullName: O9d.Metrics.AspNet.ObserverMetricType.Histogram
+  nameWithType: ObserverMetricType.Histogram
+- uid: O9d.Metrics.AspNet.ObserverMetricType.Summary
+  name: Summary
+  href: api/O9d.Metrics.AspNet.ObserverMetricType.html#O9d_Metrics_AspNet_ObserverMetricType_Summary
+  commentId: F:O9d.Metrics.AspNet.ObserverMetricType.Summary
+  fullName: O9d.Metrics.AspNet.ObserverMetricType.Summary
+  nameWithType: ObserverMetricType.Summary
 - uid: O9d.Metrics.IMetrics
   name: IMetrics
   href: api/O9d.Metrics.IMetrics.html

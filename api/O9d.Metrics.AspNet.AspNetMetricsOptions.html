@@ -103,7 +103,7 @@
     <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions__ctor.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L14">View Source</a>
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L10">View Source</a>
   </span>
   <a id="O9d_Metrics_AspNet_AspNetMetricsOptions__ctor_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor*"></a>
   <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions__ctor" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.#ctor">AspNetMetricsOptions()</h4>
@@ -117,10 +117,196 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureErrorTotalCounter.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L24">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureErrorTotalCounter_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureErrorTotalCounter" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureErrorTotalCounter">ConfigureErrorTotalCounter</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the configuration action applied to the error total counter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;CounterConfiguration&gt;? ConfigureErrorTotalCounter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">Action</span>&lt;<span class="xref">CounterConfiguration</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationHistogram.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L39">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationHistogram_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationHistogram" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationHistogram">ConfigureRequestDurationHistogram</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the configuration action applied to the request duration histogram</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;HistogramConfiguration&gt;? ConfigureRequestDurationHistogram { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">Action</span>&lt;<span class="xref">HistogramConfiguration</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationSummary.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L44">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationSummary_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestDurationSummary" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestDurationSummary">ConfigureRequestDurationSummary</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the configuration action applied to the request duration summary</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;SummaryConfiguration&gt;? ConfigureRequestDurationSummary { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">Action</span>&lt;<span class="xref">SummaryConfiguration</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestsInProgressGauge.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L29">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestsInProgressGauge_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ConfigureRequestsInProgressGauge" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ConfigureRequestsInProgressGauge">ConfigureRequestsInProgressGauge</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the configuration action applied to the requests in progress gauge</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;GaugeConfiguration&gt;? ConfigureRequestsInProgressGauge { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">Action</span>&lt;<span class="xref">GaugeConfiguration</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ContextualLabels.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L49">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ContextualLabels_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ContextualLabels" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ContextualLabels">ContextualLabels</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the contextual labels used as a source to metrics</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, Func&lt;HttpContext, string&gt;&gt;? ContextualLabels { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">Dictionary</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <span class="xref">Func</span>&lt;<span class="xref">HttpContext</span>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_RequestDurationMetricType.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L34">View Source</a>
+  </span>
+  <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_RequestDurationMetricType_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType*"></a>
+  <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_RequestDurationMetricType" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.RequestDurationMetricType">RequestDurationMetricType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the type of observer used for the request duration metric</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObserverMetricType RequestDurationMetricType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="O9d.Metrics.AspNet.ObserverMetricType.html">ObserverMetricType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L12">View Source</a>
+    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L19">View Source</a>
   </span>
   <a id="O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument_" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument*"></a>
   <h4 id="O9d_Metrics_AspNet_AspNetMetricsOptions_ShouldInstrument" data-uid="O9d.Metrics.AspNet.AspNetMetricsOptions.ShouldInstrument">ShouldInstrument</h4>
@@ -157,7 +343,7 @@
                     <a href="https://github.com/benfoster/o9d-observability/new/main/apiSpec/new?filename=O9d_Metrics_AspNet_AspNetMetricsOptions.md&amp;value=---%0Auid%3A%20O9d.Metrics.AspNet.AspNetMetricsOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/benfoster/o9d-observability/blob/main/src/Metrics.AspNet/AspNetMetricsOptions.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
