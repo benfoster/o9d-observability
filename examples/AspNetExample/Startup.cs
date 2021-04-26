@@ -24,7 +24,7 @@ namespace AspNetExample
         {
             Prometheus.Metrics.DefaultRegistry.SetStaticLabels(new Dictionary<string, string>
             {
-                { "app", "my-app" },
+                { "app", "aspnet-example" },
                 { "env", "prod" }
             });
 
@@ -32,7 +32,7 @@ namespace AspNetExample
                 builder.AddAspNetMetrics(options =>
                     options.ConfigureRequestDurationHistogram = histogram =>
                     {
-                        histogram.Buckets = new[] { 0.1, 0.2, 0.5, 0.75, 1, 2 };
+                        histogram.Buckets = new[] { 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 0.75, 1, 2 };
                     }
                 )
             );

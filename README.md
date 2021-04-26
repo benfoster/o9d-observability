@@ -125,10 +125,10 @@ Availability = (100 - 30) / (100 - 20)
 To calculate this in Prometheus/Grafana:
 
 ```
-(sum(rate(http_server_request_duration_seconds_count[10m])) - sum(rate(http_request_error_total[10m]))) / 
+(sum(rate(http_server_request_duration_seconds_count[10m])) - sum(rate(http_server_errors_total[10m]) OR on() vector(0))) / 
 ( 
     sum(rate(http_server_request_duration_seconds_count[10m])) - 
-    sum(rate(http_request_error_total{sli_error_type="invalid_request"}[10m]) OR on() vector(0))
+    sum(rate(http_server_errors_total{sli_error_type="invalid_request"}[10m]) OR on() vector(0))
 )
 ```
 

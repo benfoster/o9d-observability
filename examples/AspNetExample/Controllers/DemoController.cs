@@ -18,7 +18,7 @@ namespace examples.AspNetExample.Controllers
         }
 
         
-        // http GET https://localhost:5001/demo/error?errorType=ExternalDependency&dependency=ob-uk --verify no -v
+        // http GET https://localhost:5001/demo/error?errorType=InternalDependency&dependency=ob-uk --verify no -v
         [HttpGet("error", Name = "get_error")]
         public IActionResult Error([FromQuery]ErrorType? errorType, [FromQuery]string? dependency)
         {

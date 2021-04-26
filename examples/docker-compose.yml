@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     container_name: o9d-grafana
     ports:
-      - '3001:3000'
+      - '3000:3000'
     #environment:
       #- GF_INSTALL_PLUGINS=grafana-piechart-panel,snuids-trafficlights-panel
     networks:
