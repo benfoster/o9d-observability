@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  prometheus:
+    build:
+      context: ./docker-setup/prometheus
+      dockerfile: Dockerfile
+    container_name: o9d-prometheus
+    ports:
+      - '9090:9090'
+    networks:
+      - o9d-network
+
+  grafana:
+    build:
+      context: ./docker-setup/grafana
+      dockerfile: Dockerfile
+    container_name: o9d-grafana
+    ports:
+      - '3000:3000'
+    #environment:
+      #- GF_INSTALL_PLUGINS=grafana-piechart-panel,snuids-trafficlights-panel
+    networks:
+      - o9d-network
+
+networks:
+  o9d-network:
+    name: o9d-network
